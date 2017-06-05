@@ -6,7 +6,7 @@ import com.children.model.House;
 
 
 public interface HouseDao {
-	House findById(Integer integer);
+	House findById(Integer id);
 	
 	void save(House house);
 	

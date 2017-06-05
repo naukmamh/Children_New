@@ -15,4 +15,6 @@ public interface WishDao {
 	List<Wish> findAllWishes();
 	
 	List<Wish> findAllWishesByCat(int categoryId);
+	
+	List<Wish> findAllWishesByChild(int childId);
 }
