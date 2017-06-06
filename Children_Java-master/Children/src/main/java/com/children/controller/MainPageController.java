@@ -12,6 +12,7 @@ public class MainPageController {
 	public ModelAndView getMainPage(){
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("index");
+		mav.setViewName("index");
 		return mav;
 	}
 }
