@@ -34,6 +34,10 @@ public class Wish {
 	@JoinColumn(name = "child_id")
 	private Child child;
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "category_id")
+	private WishCategory category;
+	
 	public int getId() {
 		return id;
 	}

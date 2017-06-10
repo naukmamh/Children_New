@@ -1,11 +1,16 @@
 package com.children.model;
 
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -23,6 +28,9 @@ public class WishCategory {
 	@Column
 	private String pictureUrl;
 
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "category", cascade = CascadeType.DETACH)
+	private Set<Wish> wishes; 
+	
 	public int getId() {
 		return id;
 	}

@@ -29,26 +29,35 @@ public class WishDaoImpl extends AbstractDao<Integer, Wish> implements WishDao {
 
 	@Override
 	public void deleteById(int id) {
-		// TODO Auto-generated method stub
+		Criteria crit = createEntityCriteria();
+		crit.add(Restrictions.eq("id", id));
+		Wish wish = (Wish) crit.uniqueResult();
+		delete(wish);
 		
 	}
 
 	@Override
 	public List<Wish> findAllWishes() {
-		// TODO Auto-generated method stub
-		return null;
+		Criteria criteria = createEntityCriteria();
+		criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
+		List<Wish> wishes = (List<Wish>) criteria.list();
+		return wishes;
 	}
 
 	@Override
 	public List<Wish> findAllWishesByCat(int categoryId) {
-		// TODO Auto-generated method stub
-		return null;
+		Criteria criteria = createEntityCriteria();
+		criteria.add(Restrictions.eq("category_id", categoryId));
+		List<Wish> wishes = (List<Wish>) criteria.list();
+		return wishes;
 	}
 
 	@Override
 	public List<Wish> findAllWishesByChild(int childId) {
-		// TODO Auto-generated method stub
-		return null;
+		Criteria criteria = createEntityCriteria();
+		criteria.add(Restrictions.eq("child_id", childId));
+		List<Wish> wishes = (List<Wish>) criteria.list();
+		return wishes;
 	}
 
 
