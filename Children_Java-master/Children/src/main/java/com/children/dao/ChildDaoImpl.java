@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.children.model.Child;
 import com.children.model.House;
 
-@Repository("childDao")
+@Repository("wishDao")
 public class ChildDaoImpl extends AbstractDao<Integer, Child> implements ChildDao {
 
 

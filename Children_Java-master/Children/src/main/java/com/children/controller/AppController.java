@@ -38,6 +38,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.ModelAndView;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -162,6 +163,4 @@ public class AppController {
 	    final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 	    return authenticationTrustResolver.isAnonymous(authentication);
 	}
-
-
 }
