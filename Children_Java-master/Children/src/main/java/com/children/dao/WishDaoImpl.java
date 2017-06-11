@@ -3,14 +3,11 @@ package com.children.dao;
 import java.util.List;
 
 import org.hibernate.Criteria;
-import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.children.model.Child;
-import com.children.model.House;
 import com.children.model.Wish;
+import com.children.dao.AbstractDao;
 
 @Repository("childDao")
 public class WishDaoImpl extends AbstractDao<Integer, Wish> implements WishDao {
