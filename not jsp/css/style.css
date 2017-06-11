@@ -298,6 +298,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #fh5co-press .fh5co-press-item {
+    border: 2px dashed #b39edc; 
+    width: 100%;
   background: #fff;
   float: left;
   margin-bottom: 30px;
