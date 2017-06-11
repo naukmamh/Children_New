@@ -13,4 +13,6 @@ public interface HouseDao {
 	void deleteById(int id);
 	
 	List<House> findAllHouses();
+
+	List<House> findAllHousesByCity(String city);
 }

@@ -13,6 +13,8 @@ public interface WishDao {
 	void deleteById(int id);
 	
 	List<Wish> findAllWishes();
+
+	List<Wish> findAllWishesByHouse(int houseId);
 	
 	List<Wish> findAllWishesByCat(int categoryId);
 	

@@ -32,7 +32,7 @@ public class Child {
 	
 	@NotEmpty
 	@Column
-	private Date street;
+	private Date birthDate;
 	
 	@NotEmpty
 	@Column
@@ -69,12 +69,12 @@ public class Child {
 		this.firstName = firstName;
 	}
 
-	public Date getStreet() {
-		return street;
+	public Date getBirthDate() {
+		return birthDate;
 	}
 
-	public void setStreet(Date street) {
-		this.street = street;
+	public void setBirthDate(Date street) {
+		this.birthDate = street;
 	}
 
 	public String getDescription() {

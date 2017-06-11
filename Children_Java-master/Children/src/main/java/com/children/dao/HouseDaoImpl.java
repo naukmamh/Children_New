@@ -43,4 +43,12 @@ public class HouseDaoImpl extends AbstractDao<Integer, House> implements HouseDa
 		return houses;
 	}
 
+	@Override
+	public List<House> findAllHousesByCity(String city) {
+		Criteria criteria = createEntityCriteria();
+		criteria.add(Restrictions.eq("city", city));
+		List<House> houses = (List<House>) criteria.list();
+		return houses;
+	}
+
 }

@@ -7,7 +7,6 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
 import com.children.model.Wish;
-import com.children.dao.AbstractDao;
 
 @Repository("childDao")
 public class WishDaoImpl extends AbstractDao<Integer, Wish> implements WishDao {
@@ -53,6 +52,14 @@ public class WishDaoImpl extends AbstractDao<Integer, Wish> implements WishDao {
 	public List<Wish> findAllWishesByChild(int childId) {
 		Criteria criteria = createEntityCriteria();
 		criteria.add(Restrictions.eq("child_id", childId));
+		List<Wish> wishes = (List<Wish>) criteria.list();
+		return wishes;
+	}
+
+	@Override
+	public List<Wish> findAllWishesByHouse(int houseId) {
+		Criteria criteria = createEntityCriteria();
+		criteria.add(Restrictions.eq("house_id", houseId));
 		List<Wish> wishes = (List<Wish>) criteria.list();
 		return wishes;
 	}

@@ -13,4 +13,6 @@ public interface ChildDao {
 	void deleteById(int id);
 	
 	List<Child> findAllChildren();
+	
+	List<Child> findAllChildrenByHouse(int houseId);
 }
