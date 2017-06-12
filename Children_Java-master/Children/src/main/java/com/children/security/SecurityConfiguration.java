@@ -36,9 +36,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/", "/list")
+		http.authorizeRequests().antMatchers("/child", "/list")
 				.access("hasRole('USER') or hasRole('ADMIN')")
-				.antMatchers("/", "/dlist")
+				.antMatchers("/child", "/dlist")
 				.access("hasRole('USER') or hasRole('ADMIN')")
 				.antMatchers("/newuserdf/**", "/delete-user-*").access("hasRole('ADMIN')").antMatchers("/edit-userdf-*")
 				.access("hasRole('ADMIN') or hasRole('DBA')").and().formLogin().loginPage("/login")
