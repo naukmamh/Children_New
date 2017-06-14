@@ -208,7 +208,7 @@ h1, h2, h3, h4, h5, h6 {
 #fh5co-testimonials,
 #fh5co-press,
 #fh5co-join{
-  padding: 7em 0;
+  padding: 5em 0;
 }
 
 
@@ -299,6 +299,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #fh5co-press .fh5co-press-item {
     border: 2px dashed #b39edc; 
+    border-radius: 20px;
     width: 100%;
   background: #fff;
   float: left;
@@ -310,10 +311,9 @@ h1, h2, h3, h4, h5, h6 {
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
 }
 
 #fh5co-press .fh5co-press-item .fh5co-press-text,
@@ -324,6 +324,8 @@ h1, h2, h3, h4, h5, h6 {
 #fh5co-press .fh5co-press-item .fh5co-press-text {
   float: left;
   padding: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
 }
 #fh5co-press .fh5co-press-item .fh5co-press-text .fh5co-press-title {
   margin: 0 0 20px 0;
@@ -338,7 +340,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   bottom: 0;
   height: 2px;
-  width: 30px;
+  width: 100%;
   background: #b39edc;
 }
 #fh5co-press .fh5co-press-item .fh5co-press-img {
@@ -346,6 +348,8 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   bottom: 0;
   top: 0;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
   background-size: cover;
 }
 
@@ -763,4 +767,14 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     position: absolute;
     bottom: 50px;
+}
+
+.allchildren{
+    margin-top: 80px;
+}
+
+.login-btn{
+    border-radius: 10px;
+    padding: 10px 30px !important;
+    margin-top: 15px;
 }
