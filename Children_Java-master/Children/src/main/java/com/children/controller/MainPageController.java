@@ -16,11 +16,5 @@ public class MainPageController {
 		return mav;
 	}
 	
-	@RequestMapping(value = { "/main" }, method = RequestMethod.GET)
-	public String main(ModelMap model) {
 
-		
-		//model.addAttribute("loggedinuser", getPrincipal());
-		return "index";
-	}
 }
