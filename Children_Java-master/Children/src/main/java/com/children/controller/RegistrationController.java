@@ -8,6 +8,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.children.dao.HouseDaoImpl;
 import com.children.model.House;
 
 @Controller
@@ -22,7 +23,7 @@ public class RegistrationController {
 	public String register(@Valid House h, BindingResult bindingResult){
         System.out.println("Try..");
 		if (!bindingResult.hasErrors()) {
-            System.out.println("Ok!");
+            (new HouseDaoImpl()).save((House) bindingResult.getTarget() );
         }
 		return "login";
 	}
