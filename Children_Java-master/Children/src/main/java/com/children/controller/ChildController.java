@@ -35,6 +35,7 @@ public class ChildController {
 	@RequestMapping(value = { "/", "/all" }, method = RequestMethod.GET)
 	public String listChildren(ModelMap model) {
 		List<Child> children = childrenService.findAllChildren();
+		
 		model.addAttribute("news", children);
 		model.addAttribute("loggedinuser", getPrincipal());
 		return "children";
