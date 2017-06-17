@@ -75,7 +75,7 @@
 							<span class="icon icon-close">Close the dialog</span>
 							<h2>Sign Up</h2>
 							<springForm:form method="POST" modelAttribute="house"
-								action="register">
+								action="registration">
 								<table>
 									<tr>
 										<td>Name:</td>
