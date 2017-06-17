@@ -33,6 +33,7 @@
                         <li><a href="#" data-nav-section="about"><span>Про нас</span></a></li>
                         <li><a href="#" data-nav-section="testimonials"><span>Як працює</span></a></li>
                         <li><a href="#" data-nav-section="press"><span>Діти</span></a></li>
+                        <li><a href="#" class="login-btn hvr-reveal"><span>Увійти</span></a></li>
                     </ul>
                 </div>
             </nav>
@@ -223,7 +224,6 @@
                             <p><a href="#" class="btn btn-primary btn-sm">Дізнатися більше</a></p>
                         </div>
                     </div>
-                    <!-- Press Item -->
                 </div>
 
                 <div class="col-md-6">
@@ -238,9 +238,10 @@
                             <p><a href="#" class="btn btn-primary btn-sm">Дізнатися більше</a></p>
                         </div>
                     </div>
-                    <!-- Press Item -->
                 </div>
-
+				<center>
+                    <button class="btn btn-primary allchildren">Усі діти</button>
+                </center>
 
             </div>
         </div>
