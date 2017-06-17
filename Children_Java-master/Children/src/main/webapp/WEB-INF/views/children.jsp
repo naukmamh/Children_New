@@ -4,9 +4,141 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Children</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Yanone+Kaffeesatz" rel="stylesheet" type='text/css'>
+    <link rel="stylesheet" href="<c:url value='/static/css/animate.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/icomoon.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/simple-line-icons.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/owl.carousel.min.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/owl.theme.default.min.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/bootstrap.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/hover.css'/>">
+        <link rel="stylesheet" type="text/css" href="<c:url value='/static/css/default.css'/>"/>
+    <link rel="stylesheet" type="text/css" href="<c:url value='/static/css/component.css'/>"/>
+
+    <link rel="stylesheet" href="<c:url value='/static/css/style.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/style-chp.css'/>">
 </head>
 <body>
+	<header role="banner" id="fh5co-header">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+                    <a class="navbar-brand" href="index.html">Children</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span>Головна</span></a></li>
+                        <li><a href="#" class="login-btn hvr-reveal"><span>Увійти</span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <img class="babyback" src="<c:url value='/static/images/back.png'/>"/>
 
+    <div id="fh5co-press" data-section="press">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 section-heading text-center">
+                    <h2 class="single-animate animate-press-1">Діти</h2>
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 subtext single-animate animate-press-2">
+                            <div class="main clearfix">
+				<form id="nl-form" class="nl-form">
+					Я хочу подарувати мрію
+					<select>
+						<option value="1" selected>дитині</option>
+						<option value="2">хлопчику</option>
+						<option value="3">дівчинці</option>
+					</select>
+					<input class="years" type="text" value="" placeholder="будь-якого віку" data-subline="Наприклад: <em>від 5 до 9 років</em>"/>
+					з <input type="text" value="" placeholder="будь-якого міста" data-subline="Наприклад: <em>Київ</em> або <em>Львів</em>"/>
+					<div class="nl-submit-wrap">
+						<button class="nl-submit hvr-grow-rotate" type="submit">Знайти дитину</button>
+					</div>
+                    <div class="nl-overlay"></div>
+				</form>
+			</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="fh5co-press-item to-animate">
+                        <div class="fh5co-press-img" style="background-image: url(http://www.pravsworld.com/wp-content/uploads/2013/12/Child-Smile-e1402671131894.jpg)">
+                        </div>
+                        <div class="fh5co-press-text">
+                            <h3 class="h2 fh5co-press-title">Вася <span class="fh5co-border"></span></h3>
+                            <h2 class="fh5co-press-title years">12 років</h2>
+                            <p>Мріє про родину</p>
+                            <p><a href="#" class="btn btn-primary btn-sm">Дізнатися більше</a></p>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="fh5co-press-item to-animate">
+                        <div class="fh5co-press-img" style="background-image: url(https://www.barnardos.org.uk/how-to-adopt-a-child-in-scotland-top-banner.jpg)">
+                        </div>
+                        <div class="fh5co-press-text">
+                            <h3 class="h2 fh5co-press-title">Катя <span class="fh5co-border"></span></h3>
+                            <h2 class="fh5co-press-title years">10 років</h2>
+                            <p>Любить малювати</p>
+                            <p><a href="#" class="btn btn-primary btn-sm">Дізнатися більше</a></p>
+                        </div>
+                    </div>
+                </div>
+                <center>
+
+                    <div>
+                        <ul class="pagination to-animate">
+                            <li class="previous">
+                                <a href="#fakelink" class="fui-arrow-left">Попередня</a>
+                            </li>
+                            <li class="active"><a href="#fakelink">1</a></li>
+                            <li class="hvr-sink"><a href="#fakelink">2</a></li>
+                            <li class="hvr-sink"><a href="#fakelink">3</a></li>
+                            <li class="hvr-sink"><a href="#fakelink">4</a></li>
+                            <li class="hvr-sink"><a href="#fakelink">5</a></li>
+                            <li class="hvr-sink"><a href="#fakelink">6</a></li>
+                            <li class="hvr-sink"><a href="#fakelink">7</a></li>
+                            <li class="hvr-sink"><a href="#fakelink">8</a></li>
+                            <li class="next">
+                                <a href="#fakelink" class="fui-arrow-right">Наступна</a>
+                            </li>
+                        </ul>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer" role="contentinfo">
+        <div class="container">
+            <div class="row row-bottom-padded-sm">
+                <div class="col-md-12">
+                    <p class="copyright text-center">&copy; KMA 2017<br> Children web-project by <a href="#" target="_blank">Natalia, Julia, Oleksii</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="<c:url value='/static/js/jquery.min.js'/>"></script>
+    <script src="<c:url value='/static/js/jquery.easing.1.3.js'/>"></script>
+    <script src="<c:url value='/static/js/bootstrap.min.js'/>"></script>
+    <script src="<c:url value='/static/js/jquery.waypoints.min.js'/>"></script>
+    <script src="<c:url value='/static/js/owl.carousel.min.js'/>"></script>
+    <script src="<c:url value='/static/js/jquery.style.switcher.js'/>"></script>
+    <script src="<c:url value='/static/js/main.js'/>"></script>
+    <script src="<c:url value='/static/js/nlform.js'/>"></script>
+    <script>
+        var nlform = new NLForm(document.getElementById('nl-form'));
+    </script>
 </body>
 </html>
