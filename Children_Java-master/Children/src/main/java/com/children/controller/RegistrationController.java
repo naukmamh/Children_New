@@ -1,5 +1,6 @@
 package com.children.controller;
 
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ public HouseDaoImpl houseDAO;
 		m.addAttribute("house", new House());
 		return "login";
 	}
+	 @Transactional
 	@RequestMapping(value={"/registration"}, method=RequestMethod.POST)
 	public String register(@Valid House h, BindingResult bindingResult){
         System.out.println("Try..");
