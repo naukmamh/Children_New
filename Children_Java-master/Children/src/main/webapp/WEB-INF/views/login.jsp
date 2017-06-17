@@ -76,6 +76,7 @@
 							<h2>Sign Up</h2>
 							<springForm:form method="POST" modelAttribute="house"
 								action="registration">
+								<div>test merging</div>
 								<table>
 									<tr>
 										<td>Name:</td>

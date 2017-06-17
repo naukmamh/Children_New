@@ -2,6 +2,8 @@ package com.children.dao;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Repository;
 import com.children.model.House;
 
 @Repository("houseDao")
+
 public class HouseDaoImpl extends AbstractDao<Integer, House> implements HouseDao {
 	@Autowired
 	SessionFactory sessionFactory;
