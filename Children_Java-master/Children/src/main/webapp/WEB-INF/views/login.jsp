@@ -46,9 +46,10 @@
 		</nav>
 	</div>
 	</header>
+	 <img class="babyback" src="<c:url value='/static/images/back.png'/>"/>
 	<div class="containerr">
 		<section>
-		<p style="margin-top: 100px">
+		<p class="title">
 			Click one of the buttons below to see a <strong>modal dialog</strong>:
 		</p>
 		<div class="mockup-content">
@@ -60,7 +61,7 @@
 						<div class="content-style-form content-style-form-1">
 							<span class="icon icon-close">Close the dialog</span>
 							<h2>Login</h2>
-							
+
 						</div>
 					</div>
 				</div>
@@ -76,7 +77,6 @@
 							<h2>Sign Up</h2>
 							<springForm:form method="POST" modelAttribute="house"
 								action="registration">
-								<div>test merging</div>
 								<table>
 									<tr>
 										<td>Name:</td>
@@ -101,11 +101,11 @@
 									<tr>
 										<td>Description:</td>
 										<td><springForm:input path="description" /></td>
-										<td><springForm:errors path="description" cssClass="error" /></td>
+										<td><springForm:errors path="description"
+												cssClass="error" /></td>
 									</tr>
 									<tr>
-									<td colspan="3">
-									<input type="submit" value="Register"></td>
+										<td colspan="3"><input type="submit" value="Register"></td>
 									</tr>
 								</table>
 							</springForm:form>
