@@ -158,6 +158,7 @@ section .cont{
 
 section .cont .title{
     margin-top: 25%;
+    margin-bottom: 1px;
 }
 
 section p {
