@@ -72,10 +72,11 @@
 				<div class="morph-content">
 					<div>
 						<div class="content-style-form content-style-form-2">
-							<span class="icon icon-close">Close the dialog</span>
+							<span class="icon icon-close">&times;</span>
 							<h2>Sign Up</h2>
 							<springForm:form method="POST" modelAttribute="house"
 								action="registration">
+								<div>test merging</div>
 								<table>
 									<tr>
 										<td>Name:</td>
