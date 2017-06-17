@@ -179,8 +179,9 @@
 .morph-button-modal-2 .morph-content,
 .morph-button-modal-3 > button,
 .morph-button-modal-3 .morph-content {
-	background-color: #fef0e3;
-	color: #e75854;
+    border-radius: 20px;
+	background-color: #f4f4f4;
+	color: #b39edc;
 }
 
 .morph-button-modal-4 {
@@ -223,7 +224,7 @@
 .morph-button-modal-2.open .morph-content {
 	margin: -210px 0 0 -170px;
 	width: 340px;
-	height: 420px;
+	height: 360px;
 }
 
 .morph-button-modal-3.open .morph-content {
