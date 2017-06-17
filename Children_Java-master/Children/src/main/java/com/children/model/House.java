@@ -10,10 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
-import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -23,27 +19,22 @@ public class House {
 	@Column(nullable=false)
 	private int id;
 	
-	@NotNull
-	@Size(min=4)
 	@NotEmpty
 	@Column
 	private String name;
 	
-	@NotNull
 	@NotEmpty
 	@Column
 	private String city;
-
-	@NotNull
+	
 	@NotEmpty
 	@Column
 	private String street;
-
-	@NotNull
+	
 	@NotEmpty
 	@Column
 	private String number;
-
+	
 	@NotEmpty
 	@Column
 	private String description;
