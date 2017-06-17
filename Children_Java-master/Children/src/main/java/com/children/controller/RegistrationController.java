@@ -2,6 +2,7 @@ package com.children.controller;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,7 +14,8 @@ import com.children.model.House;
 
 @Controller
 public class RegistrationController {
-
+@Autowired
+public HouseDaoImpl houseDAO;
 	@RequestMapping(value={"/registration"}, method=RequestMethod.GET)
 	public String registrationRender(Model m){
 		m.addAttribute("house", new House());
@@ -23,7 +25,7 @@ public class RegistrationController {
 	public String register(@Valid House h, BindingResult bindingResult){
         System.out.println("Try..");
 		if (!bindingResult.hasErrors()) {
-            (new HouseDaoImpl()).save((House) bindingResult.getTarget() );
+            houseDAO.save((House) bindingResult.getTarget() );
         }
 		return "login";
 	}
