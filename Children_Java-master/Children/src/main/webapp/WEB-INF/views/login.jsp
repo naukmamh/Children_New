@@ -1,20 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Увійти до системи</title>
-    <link rel="stylesheet" type="text/css" href="css/componentlogin.css" />
-    <link rel="stylesheet" type="text/css" href="css/content.css" />
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/hover.css">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/static/css/componentlogin.css'/>" />
+    <link rel="stylesheet" type="text/css" href="<c:url value='/static/css/content.css'/>" />
+    <link rel="stylesheet" href="<c:url value='/static/css/bootstrap.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/hover.css'/>">
     
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/style-login.css" />
+    <link rel="stylesheet" type="text/css" href="<c:url value='/static/css/style.css'/>" />
+    <link rel="stylesheet" type="text/css" href="<c:url value='/static/css/style-login.css'/>"/>
     <script src="js/modernizr.custom.js"></script>
 </head>
-
 <body>
-    <header role="banner" id="fh5co-header">
+	    <header role="banner" id="fh5co-header">
             <div class="container">
                 <nav class="navbar navbar-default">
                     <div class="navbar-header">
@@ -76,8 +78,8 @@
             </div>
         </section>
     </div>
-    <script src="js/classie.js"></script>
-    <script src="js/uiMorphingButton_fixed.js"></script>
+    <script src="<c:url value='/static/js/classie.js'/>"></script>
+    <script src="<c:url value='/static/js/uiMorphingButton_fixed.js'/>"></script>
     <script>
         (function() {
             var docElem = window.document.documentElement,
@@ -147,5 +149,4 @@
 
     </script>
 </body>
-
 </html>
