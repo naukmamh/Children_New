@@ -55,7 +55,7 @@
 				<form id="nl-form" class="nl-form" action="" method="get">
 					Я хочу подарувати мрію
 					<select name="sex">
-						<option value="1" selected>дитині</option>
+						<option value="" selected>дитині</option>
 						<option value="2">хлопчику</option>
 						<option value="3">дівчинці</option>
 					</select>
