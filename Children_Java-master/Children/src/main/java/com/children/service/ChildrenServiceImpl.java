@@ -1,6 +1,7 @@
 package com.children.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,6 +53,11 @@ public class ChildrenServiceImpl implements ChildrenService{
 	@Override
 	public List<Child> findAllChildrenByHouse(int houseId) {
 		return childDao.findAllChildrenByHouse(houseId);
+	}
+
+	@Override
+	public List<Child> findAllChildrenWithFilters(Map<String, String> filters) {
+		return childDao.findAllChildrenWithFilters(filters);
 	}
 
 }
