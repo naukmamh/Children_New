@@ -1,0 +1,47 @@
+.babyback {
+    position: absolute;
+    right: 0;
+    top: 100px;
+    width: 110%;
+    left: -50px;
+}
+
+#fh5co-press .row{
+    margin-top: 50px;
+}
+
+.section-heading h2 {
+    font-size: 50px;
+    font-weight: 300;
+    color: #444;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 20px;
+    line-height: 1.5;
+}
+
+.section-heading h2:after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 2px;
+    background: #b39edc;
+    left: 5%;
+    bottom: 0;
+    top: -5px;
+}
+
+#fh5co-press .child-photo {
+    clip-path: circle(at center);
+    width: 100%;
+}
+
+#fh5co-press .child-photo-div{
+    margin-left: -150px;
+}
+
+#fh5co-press .subtext{
+    margin-top: -20px;
+    width: 150%;
+    margin-left: -24%;
+}

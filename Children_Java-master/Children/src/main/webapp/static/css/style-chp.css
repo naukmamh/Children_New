@@ -10,6 +10,11 @@ body {
   position: relative;
 }
 
+.not-found{
+	color: #aaa;
+    margin-top: -30px;
+}
+
 a {
   color: #b39edc;
   -webkit-transition: 0.5s;

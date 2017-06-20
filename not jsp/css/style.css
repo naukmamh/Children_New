@@ -225,7 +225,7 @@ h6 {
     clear: both;
 }
 
-.section-heading h2 {
+.section-heading h2, .section-heading-main h2{
     font-size: 50px;
     font-weight: 300;
     color: #444;
@@ -236,7 +236,7 @@ h6 {
     line-height: 1.5;
 }
 
-.section-heading h2:after {
+.section-heading h2:after, .section-heading-main h2:after {
     content: "";
     position: absolute;
     display: block;

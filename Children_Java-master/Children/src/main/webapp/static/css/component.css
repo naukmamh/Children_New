@@ -154,7 +154,7 @@
 .nl-form .nl-field-go {
 	position: absolute;
 	right: 0;
-	top: -5;
+	top: -5px;
 	height: 110%;
 	cursor: pointer;
 	background: rgba(0,0,0,0.1);
@@ -203,6 +203,7 @@ input:focus::-ms-input-placeholder {
 
 /* example field below text input */
 .nl-ti-text ul li.nl-ti-example {
+	margin-left: -5px;
 	font-size: 50%;
 	font-style: italic;
 	font-weight: 400;

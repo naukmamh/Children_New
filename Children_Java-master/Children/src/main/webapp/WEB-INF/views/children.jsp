@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -17,6 +18,7 @@
     <link rel="stylesheet" href="<c:url value='/static/css/owl.theme.default.min.css'/>">
     <link rel="stylesheet" href="<c:url value='/static/css/bootstrap.css'/>">
     <link rel="stylesheet" href="<c:url value='/static/css/hover.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/flat-ui.css'/>">
         <link rel="stylesheet" type="text/css" href="<c:url value='/static/css/default.css'/>"/>
     <link rel="stylesheet" type="text/css" href="<c:url value='/static/css/component.css'/>"/>
 
@@ -71,6 +73,12 @@
             </div>
             
             <div class="row">
+            <c:if test="${fn:length(children) == 0}">
+            <center>
+            	<h4 class="not-found">На жаль, за таким запитом нічого не знайдено</h4>
+            	</center>
+            </c:if>
+            
             <c:forEach items="${children}" var="child">
                 <div class="col-md-6">
                     <div class="fh5co-press-item to-animate">
@@ -117,7 +125,7 @@
         <div class="container">
             <div class="row row-bottom-padded-sm">
                 <div class="col-md-12">
-                    <p class="copyright text-center">&copy; KMA 2017<br> Children web-project by <a href="#" target="_blank">Natalia, Julia, Oleksii</a></p>
+                    <p class="copyright text-center">&copy; KMA 2017<br> Children web-project by <a href="https://github.com/natalya118/Children_New" target="_blank">Natalia, Julia, Oleksii</a></p>
                 </div>
             </div>
         </div>
