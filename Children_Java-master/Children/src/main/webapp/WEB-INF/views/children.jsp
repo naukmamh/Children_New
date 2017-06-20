@@ -52,15 +52,15 @@
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2 subtext single-animate animate-press-2">
                             <div class="main clearfix">
-				<form id="nl-form" class="nl-form">
+				<form id="nl-form" class="nl-form" action="" method="get">
 					Я хочу подарувати мрію
-					<select>
+					<select name="sex">
 						<option value="1" selected>дитині</option>
 						<option value="2">хлопчику</option>
 						<option value="3">дівчинці</option>
 					</select>
-					<input class="years" type="text" value="" placeholder="будь-якого віку" data-subline="Наприклад: <em>від 5 до 9 років</em>"/>
-					з <input type="text" value="" placeholder="будь-якого міста" data-subline="Наприклад: <em>Київ</em> або <em>Львів</em>"/>
+					<input name="age" class="years" type="text" value="" placeholder="будь-якого віку" data-subline="Наприклад: <em>від 5 до 9 років</em>"/>
+					з <input  name="city" type="text" value="" placeholder="будь-якого міста" data-subline="Наприклад: <em>Київ</em> або <em>Львів</em>"/>
 					<div class="nl-submit-wrap">
 						<button class="nl-submit hvr-grow-rotate" type="submit">Знайти дитину</button>
 					</div>

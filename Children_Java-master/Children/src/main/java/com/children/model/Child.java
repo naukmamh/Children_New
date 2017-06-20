@@ -45,7 +45,12 @@ public class Child {
 	@NotEmpty
 	@Column
 	private Date birthDate;
-
+	
+	@NotNull
+	@NotEmpty
+	@Column
+	private String sex;
+	
 	@NotEmpty
 	@Column
 	private String description;
