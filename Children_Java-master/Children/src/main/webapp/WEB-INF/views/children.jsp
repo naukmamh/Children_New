@@ -69,13 +69,15 @@
                     </div>
                 </div>
             </div>
+            
             <div class="row">
+            <c:forEach items="${children}" var="child">
                 <div class="col-md-6">
                     <div class="fh5co-press-item to-animate">
                         <div class="fh5co-press-img" style="background-image: url(http://www.pravsworld.com/wp-content/uploads/2013/12/Child-Smile-e1402671131894.jpg)">
                         </div>
                         <div class="fh5co-press-text">
-                            <h3 class="h2 fh5co-press-title">Вася <span class="fh5co-border"></span></h3>
+                            <h3 class="h2 fh5co-press-title">${child.firstName} <span class="fh5co-border"></span></h3>
                             <h2 class="fh5co-press-title years">12 років</h2>
                             <p>Мріє про родину</p>
                             <p><a href="#" class="btn btn-primary btn-sm">Дізнатися більше</a></p>
@@ -83,19 +85,9 @@
                         
                     </div>
                 </div>
+                </c:forEach>
 
-                <div class="col-md-6">
-                    <div class="fh5co-press-item to-animate">
-                        <div class="fh5co-press-img" style="background-image: url(https://www.barnardos.org.uk/how-to-adopt-a-child-in-scotland-top-banner.jpg)">
-                        </div>
-                        <div class="fh5co-press-text">
-                            <h3 class="h2 fh5co-press-title">Катя <span class="fh5co-border"></span></h3>
-                            <h2 class="fh5co-press-title years">10 років</h2>
-                            <p>Любить малювати</p>
-                            <p><a href="#" class="btn btn-primary btn-sm">Дізнатися більше</a></p>
-                        </div>
-                    </div>
-                </div>
+
                 <center>
 
                     <div>
