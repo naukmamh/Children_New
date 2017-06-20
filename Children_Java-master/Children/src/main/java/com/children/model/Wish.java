@@ -13,7 +13,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
@@ -22,6 +24,8 @@ public class Wish {
 	@Column(nullable=false)
 	private int id;
 	
+	@NotNull
+	@Length(min=3)
 	@NotEmpty
 	@Column
 	private String name;
@@ -30,10 +34,11 @@ public class Wish {
 	@Column
 	private String description;
 	
+	@NotNull
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "child_id")
 	private Child child;
-
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "category_id")
 	private WishCategory category;

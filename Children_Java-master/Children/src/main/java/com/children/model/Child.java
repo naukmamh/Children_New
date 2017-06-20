@@ -14,7 +14,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.transaction.Transactional;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
@@ -24,18 +28,24 @@ public class Child {
 	@Column(nullable=false)
 	private int id;
 	
+	@NotNull
+	@Length(min=2, max=50)
 	@NotEmpty
 	@Column
 	private String lastName;
-	
+
+	@NotNull
+	@Length(min=2, max=50)
 	@NotEmpty
 	@Column
 	private String firstName;
-	
+
+	@NotNull
+	@Past
 	@NotEmpty
 	@Column
 	private Date birthDate;
-	
+
 	@NotEmpty
 	@Column
 	private String description;
