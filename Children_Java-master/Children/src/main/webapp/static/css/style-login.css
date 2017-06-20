@@ -1,6 +1,19 @@
 .containerr {
 background: #b39edc;
+    width: 100%;
     height: 100%;
+}
+
+.title{
+	    margin-top: 25%;
+}
+
+body{
+        height: 100%;
+}
+
+html{
+        height: 100%;
 }
 
 #fh5co-header {
@@ -126,7 +139,7 @@ background: #b39edc;
 
 .babyback{
     z-index: 1;
-    position: absolute;
+    position: fixed;
     width: 112%;
     opacity: 0.5;
     margin-left: -5%;
@@ -143,6 +156,8 @@ a:hover, a:focus {
 }
 
 section {
+    position: relative;
+    z-index: 20;
     color: white;
 	padding: 2em;
 	text-align: justify;
