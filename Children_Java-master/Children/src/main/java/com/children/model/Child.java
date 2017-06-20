@@ -13,10 +13,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.transaction.Transactional;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
+@Transactional
 public class Child {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(nullable=false)
