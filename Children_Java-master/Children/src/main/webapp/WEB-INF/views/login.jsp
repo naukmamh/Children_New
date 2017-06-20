@@ -9,6 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Увійти до системи</title>
+ <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Yanone+Kaffeesatz" rel="stylesheet" type='text/css'>
 <link rel="stylesheet" type="text/css"
 	href="<c:url value='/static/css/componentlogin.css'/>" />
 <link rel="stylesheet" type="text/css"
@@ -61,7 +62,10 @@
 						<div class="content-style-form content-style-form-1">
 							<span class="icon icon-close">Close the dialog</span>
 							<h2>Login</h2>
-
+							<form><p><label>Email</label><input type="text" /></p>
+                                    <p><label>Password</label><input type="password" /></p>
+                                    <p><button>Login</button></p>
+                                    </form>
 						</div>
 					</div>
 				</div>
@@ -77,37 +81,14 @@
 							<h2>Sign Up</h2>
 							<springForm:form method="POST" modelAttribute="house"
 								action="registration">
-								<table>
-									<tr>
-										<td>Name:</td>
-										<td><springForm:input path="name" /></td>
-										<td><springForm:errors path="name" cssClass="error" /></td>
-									</tr>
-									<tr>
-										<td>City:</td>
-										<td><springForm:input path="city" /></td>
-										<td><springForm:errors path="city" cssClass="error" /></td>
-									</tr>
-									<tr>
-										<td>Street:</td>
-										<td><springForm:input path="street" /></td>
-										<td><springForm:errors path="street" cssClass="error" /></td>
-									</tr>
-									<tr>
-										<td>Number:</td>
-										<td><springForm:input path="number" /></td>
-										<td><springForm:errors path="number" cssClass="error" /></td>
-									</tr>
-									<tr>
-										<td>Description:</td>
-										<td><springForm:input path="description" /></td>
-										<td><springForm:errors path="description"
-												cssClass="error" /></td>
-									</tr>
-									<tr>
-										<td colspan="3"><input type="submit" value="Register"></td>
-									</tr>
-								</table>
+								 <p><label>Назва</label><springForm:input path="name" type="text" /><springForm:errors path="name" cssClass="error" /></p>
+                                    <%-- <p><label>Password</label><springForm:input  path="password" type="password" /></p> --%>
+                                    <p><label>Місто</label><springForm:input  path="city" type="password" /><springForm:errors path="city" cssClass="error" /></p>
+                                     <p><label>Вулиця</label><springForm:input path="street" type="password" /><springForm:errors path="street" cssClass="error" /></p>
+                                      <p><label>Номер будинку</label><springForm:input path="number" type="password" /><springForm:errors path="number" cssClass="error" /></p>
+                                       <p><label>Опис</label><springForm:input path="description" type="password" /><springForm:errors path="description"
+												cssClass="error" /></p>
+                                    <p><input class="btn-submit" type="submit" value="Register"></p>
 							</springForm:form>
 						</div>
 					</div>
