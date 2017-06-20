@@ -2,6 +2,8 @@ package com.children.controller;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -31,12 +33,13 @@ public class ChildController {
 	
 	@Autowired
 	ChildrenService childrenService;
-	
+
+@Transactional
 	@RequestMapping(value = { "/all" }, method = RequestMethod.GET)
 	public String listChildren(ModelMap model) {
 		List<Child> children = childrenService.findAllChildren();
 		
-		model.addAttribute("news", children);
+		model.addAttribute("children", children);
 		model.addAttribute("loggedinuser", getPrincipal());
 		return "children";
 	}
