@@ -12,11 +12,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.transaction.Transactional;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
-import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
@@ -27,7 +25,7 @@ public class House implements Serializable{
 	private int id;
 	
 	@NotNull
-	@Size(min=4)
+	@Length(min=3)
 	@NotEmpty
 	@Column
 	private String name;

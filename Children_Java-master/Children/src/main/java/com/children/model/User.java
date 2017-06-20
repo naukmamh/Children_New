@@ -17,8 +17,13 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.messaging.simp.user.SimpSession;
 import org.springframework.messaging.simp.user.SimpUser;
@@ -31,28 +36,34 @@ public class User implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
+	@Length(min=4)
+	@NotNull
 	@NotEmpty
 	@Column(name = "sso_id", unique = true)
 	private String ssoId;
-
+	
+	@NotNull
+	@Length(min=6, max=20)
 	@NotEmpty
 	@Column(name = "password")
 	private String password;
 
-	
+	@NotNull
+	@Length(min=2)
 	@Column(name = "first_name")
 	private String firstName;
 
-	
+	@NotNull
+	@Length(min=2)
 	@Column(name = "last_name")
 	private String lastName;
 
-	
+	@NotNull
+	@Length(min=3)
+	@Pattern(regexp="^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$")
 	@Email
 	@Column(name = "email")
 	private String email;
-	
-
 
 	
 	@ManyToMany(fetch = FetchType.LAZY)

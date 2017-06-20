@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="PERSISTENT_LOGINS")
@@ -16,7 +17,7 @@ public class PersistentLogin implements Serializable{
 
 	@Id
 	private String series;
-
+	
 	@Column(name="USERNAME", unique=true, nullable=false)
 	private String username;
 	
