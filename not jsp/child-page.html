@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/flat-ui.css">
     <link rel="stylesheet" type="text/css" href="css/default.css" />
     <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <link href="css/imagehover.css" rel="stylesheet" media="all">
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style-chp.css">
@@ -49,13 +50,98 @@
                 </div>
                 <div class="col-md-3 section-heading-main text-center">
                     <h2 class="single-animate animate-press-1">Вася Іванов</h2>
+                    <div class="child-info">
+                    <div>12 років</div>
+                            <div>Київ, дитбудинок "Сонечко"</div>
+                        </div>
                     <div class="row">
                         <div class="col-md-12 subtext single-animate animate-press-2">
                             <div class="main clearfix">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis accumsan tortor. Duis bibendum justo quis lectus tempor venenatis ut nec purus. Pellentesque est eros, auctor eu nisl ut, rhoncus rutrum purus. In fringilla convallis sapien a dictum. Duis consectetur ullamcorper laoreet. Aliquam laoreet tincidunt molestie. 
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis accumsan tortor. Duis bibendum justo quis lectus tempor venenatis ut nec purus. Pellentesque est eros, auctor eu nisl ut, rhoncus rutrum purus. In fringilla convallis sapien a dictum. Duis consectetur ullamcorper laoreet. Aliquam laoreet tincidunt molestie.
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fh5co-wishes">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="myCarousel" class="carousel slide">
+                    <div class="col-md-12 section-heading text-center">
+                        <h2 class="single-animate animate-press-1">Бажання</h2>
+                    </div>
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                    </ol>
+
+                    <div class="carousel-inner">
+
+                        <div class="item active">
+                            <ul class="ch-grid">
+                                <li>
+                                    <div class="ch-item ch-img-1">
+                                        <div class="ch-info">
+                                            <h3>Котя</h3>
+                                            <a class="btn btn-primary">Подарувати</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="ch-item ch-img-2">
+                                        <div class="ch-info">
+                                            <h3>Common Causes of Stains</h3>
+                                            <p>by Antonio F. Mondragon <a href="http://drbl.in/eKMi">View on Dribbble</a></p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="ch-item ch-img-3">
+                                        <div class="ch-info">
+                                            <h3>Pink Lightning</h3>
+                                            <p>by Charlie Wagers <a href="http://drbl.in/ekhp">View on Dribbble</a></p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="item">
+                            <ul class="ch-grid">
+                                <li>
+                                    <div class="ch-item ch-img-1">
+                                        <div class="ch-info">
+                                            <h3>Котя</h3>
+                                            <a class="btn btn-primary">Подарувати</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="ch-item ch-img-2">
+                                        <div class="ch-info">
+                                            <h3>Common Causes of Stains</h3>
+                                            <p>by Antonio F. Mondragon <a href="http://drbl.in/eKMi">View on Dribbble</a></p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="urgently">Терміново!</span>
+                                    <div class="ch-item ch-img-3">
+                                        <div class="ch-info">
+                                            <h3>Pink Lightning</h3>
+                                            <p>by Charlie Wagers <a href="http://drbl.in/ekhp">View on Dribbble</a></p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
                 </div>
             </div>
         </div>
@@ -80,6 +166,11 @@
     <script src="js/main.js"></script>
     <script src="js/nlform.js"></script>
     <script>
+        $(document).ready(function() {
+            $('#myCarousel').carousel({
+                interval: 10000
+            })
+        });
         var nlform = new NLForm(document.getElementById('nl-form'));
     </script>
 

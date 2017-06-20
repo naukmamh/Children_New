@@ -10,17 +10,17 @@
     margin-top: 50px;
 }
 
-.section-heading h2 {
+.section-heading-main h2 {
     font-size: 50px;
     font-weight: 300;
     color: #444;
     text-transform: uppercase;
     position: relative;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
     line-height: 1.5;
 }
 
-.section-heading h2:after {
+#fh5co-press .section-heading h2:after {
     content: "";
     position: absolute;
     width: 80px;
@@ -42,6 +42,127 @@
 
 #fh5co-press .subtext{
     margin-top: -20px;
-    width: 150%;
-    margin-left: -24%;
+    width: 170%;
+    margin-left: -35%;
+}
+
+#fh5co-wishes .carousel{
+    background: #fee082;#b39edc;
+}
+
+.carousel {
+    margin-bottom: 0;
+	padding: 0px 40px 50px 40px;
+}
+.carousel-control {
+	left: -12px;
+}
+.carousel-control.right {
+	right: -12px;
+}
+.carousel-indicators {
+	right: 50%;
+    padding-bottom: 10px;
+	top: auto;
+	bottom: 0px;
+	margin-right: -19px;
+}
+.carousel-indicators li {
+    margin-bottom: 
+	background: white;
+}
+.carousel-indicators .active {
+background: #b39edc;
+}
+
+.carousel-inner img{
+    clip-path: circle(at center);
+}
+
+.section-heading h2{
+    padding-bottom: 0px;
+    color: white;
+    margin-bottom: 0;
+}
+
+.section-heading h2:before{
+    color: white;
+    margin-bottom: 0;
+}
+
+.section-heading{
+    margin-bottom: 0;
+}
+
+.carousel-inner{
+    width: 90%;
+    margin-left: 5%;
+}
+
+.carousel-control{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: #b39edc;
+    margin-top: 210px;
+}
+
+.item .section-heading h2 {
+    font-size: 30px;
+    font-weight: 300;
+    color: #444;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 0px;
+    margin-top: -20px;
+}
+
+.item .section-heading h2:before {
+    height: 0px;
+}
+
+.ch-grid {
+	margin: 20px 0 0 0;
+	padding: 0;
+	list-style: none;
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+.ch-grid:after,
+.ch-item:before {
+	content: '';
+    display: table;
+}
+
+.ch-grid:after {
+	clear: both;
+}
+
+.ch-grid li {
+    margin-top: -20px;
+	width: 260px;
+	height: 260px;
+	display: inline-block;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.urgently{
+    position: absolute;
+    z-index: 80;
+    background-color: orangered;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    padding: 2px 20px;
+    top: 1px;
+}
+
+.child-info{
+    text-transform: uppercase;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    letter-spacing: 1.5px;
 }
