@@ -1,32 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
 <head>
-    <title>All children</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Ім'я</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Yanone+Kaffeesatz" rel="stylesheet" type='text/css'>
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/simple-line-icons.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/hover.css">
-    <link rel="stylesheet" href="css/flat-ui.css">
-    <link rel="stylesheet" type="text/css" href="css/default.css" />
-    <link rel="stylesheet" type="text/css" href="css/component.css" />
-    <link href="css/imagehover.css" rel="stylesheet" media="all">
-    <link rel="stylesheet" type="text/css" href="css/icons.css" />
+    <link rel="stylesheet" href="<c:url value='/static/css/animate.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/icomoon.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/simple-line-icons.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/owl.carousel.min.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/owl.theme.default.min.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/bootstrap.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/hover.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/flat-ui.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/static/css/default.css'/>" />
+    <link rel="stylesheet" type="text/css" href="<c:url value='/static/css/component.css'/>" />
+    <link href="<c:url value='/static/css/imagehover.css'/>" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/static/css/icons.css'/>" />
     <link href="http://www.cssscript.com/wp-includes/css/sticky.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style-chp.css">
-    <link rel="stylesheet" href="css/style-child.css">
-
+    <link rel="stylesheet" href="<c:url value='/static/css/style.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/style-chp.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/style-child.css'/>">
 </head>
-
 <body>
-    <header role="banner" id="fh5co-header">
+	<header role="banner" id="fh5co-header">
         <div class="container">
             <nav class="navbar navbar-default">
                 <div class="navbar-header">
@@ -268,7 +269,6 @@
             })
         });
     </script>
-
+	
 </body>
-
 </html>
