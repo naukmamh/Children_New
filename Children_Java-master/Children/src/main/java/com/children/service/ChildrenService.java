@@ -1,6 +1,7 @@
 package com.children.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.children.model.Child;
 
@@ -16,4 +17,6 @@ public interface ChildrenService {
 	List<Child> findAllChildren();
 
 	List<Child> findAllChildrenByHouse(int houseId);
+	
+	List<Child> findAllChildrenWithFilters(Map<String, String> filters);
 }
