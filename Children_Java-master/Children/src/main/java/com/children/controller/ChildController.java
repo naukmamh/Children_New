@@ -1,6 +1,7 @@
 package com.children.controller;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -50,6 +51,13 @@ public class ChildController {
 	}
 		model.addAttribute("children", children);
 		model.addAttribute("loggedinuser", getPrincipal());
+		
+		
+		//to test search
+//		Map f = new HashMap<String,String>();
+//		f.put("age", "18");
+//		f.put("city", "Kiev");
+//		List res = childrenService.findAllChildrenWithFilters(f);
 		return "children";
 	}
 	
