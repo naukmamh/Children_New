@@ -1,6 +1,7 @@
 package com.children.controller;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.children.model.Child;
+import com.children.model.House;
 import com.children.service.ChildrenService;
 import com.children.service.HouseService;
 import com.children.service.UserProfileService;
@@ -44,16 +46,24 @@ public class ChildController {
 @Transactional
 	@RequestMapping(value = { "/all" }, method = RequestMethod.GET)
 	public String listChildren(ModelMap model, @RequestParam Map<String,String> filters) {
+	House house = houseService.findById(1);
 	
-	List<Child> children;
-	if(filters.size()>0){
-		filters.values().removeAll(Collections.singleton(""));
-		children = childrenService.findAllChildrenWithFilters(filters);
-	} else{
-		children = childrenService.findAllChildren();
-	}
-		model.addAttribute("children", children);
+	house.getChildren();
+//	if(filters.size()>0){
+//		filters.values().removeAll(Collections.singleton(""));
+//		children = childrenService.findAllChildrenWithFilters(filters);
+//	} else{
+//		children = childrenService.findAllChildren();
+//	}
+	//	model.addAttribute("children", children);
 		model.addAttribute("loggedinuser", getPrincipal());
+		
+		
+		//to test search
+//		Map f = new HashMap<String,String>();
+//		f.put("age", "18");
+//		f.put("city", "Kiev");
+//		List res = childrenService.findAllChildrenWithFilters(f);
 		return "children";
 	}
 
