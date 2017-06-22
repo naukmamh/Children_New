@@ -13,6 +13,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenBasedRememberMeServices;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.children.model.House;
 import com.children.model.User;
 import com.children.model.UserProfile;
 import com.children.service.UserProfileService;
@@ -114,8 +116,9 @@ public class AppController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String loginPage() {
+	public String loginPage(Model m) {
 		if (isCurrentAuthenticationAnonymous()) {
+			m.addAttribute("house",new House());
 			return "login";
 	    } else {
 	    	return "";  
