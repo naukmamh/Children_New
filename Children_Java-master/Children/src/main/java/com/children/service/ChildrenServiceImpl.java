@@ -1,13 +1,18 @@
 package com.children.service;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.children.dao.ChildDao;
 import com.children.model.Child;
+import com.children.model.Wish;
 
 @Service("childrenService")
 public class ChildrenServiceImpl implements ChildrenService{
@@ -60,4 +65,33 @@ public class ChildrenServiceImpl implements ChildrenService{
 		return childDao.findAllChildrenWithFilters(filters);
 	}
 
+	@Override
+	public int getAge(Child child) {
+		return Period.between(
+				LocalDate.of(child.getBirthDate().getYear(), child.getBirthDate().getMonth(), child.getBirthDate().getDay())
+				,LocalDate.now())
+				.getYears();
+	}
+
+	@Override
+	public List<List<Wish>> formatCarouselWishes(Set<Wish> childWishes) {
+		List<List<Wish>> ret = new ArrayList<List<Wish>>();
+		List<Wish> part = new ArrayList<Wish>();
+		int i=0;
+		for(Wish w: childWishes){
+			i++;
+			System.out.println("Added "+w.getName());
+			part.add(w);
+			if(i%3==0){
+				System.out.println("Putting "+part.size()+" elements;");
+				ret.add(part);
+				part = new ArrayList<Wish>();
+			}
+		}
+		if(i%3!=0){
+			System.out.println("Putting "+part.size()+" elements;");
+			ret.add(part);
+		}
+		return ret;
+	}
 }

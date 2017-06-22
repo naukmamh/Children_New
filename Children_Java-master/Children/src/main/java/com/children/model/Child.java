@@ -57,7 +57,7 @@ public class Child implements Serializable {
 	@Column
 	private String description;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "house_id")
 	private House house;
 	
@@ -104,6 +104,28 @@ public class Child implements Serializable {
 		this.description = description;
 	}
 
-	
+	public String getSex() {
+		return sex;
+	}
 
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public House getHouse() {
+		return house;
+	}
+
+	public void setHouse(House house) {
+		this.house = house;
+	}
+
+	public Set<Wish> getWishes() {
+		return wishes;
+	}
+
+	public void setWishes(Set<Wish> wishes) {
+		this.wishes = wishes;
+	}
+	
 }

@@ -66,7 +66,19 @@ public class ChildController {
 //		List res = childrenService.findAllChildrenWithFilters(f);
 		return "children";
 	}
-	
+
+@Transactional
+@RequestMapping(value = { "/child" }, method = RequestMethod.GET)
+public String oneChildren(ModelMap model, @RequestParam("id") int id) {
+	Child child = childrenService.findById(id);
+	model.addAttribute("child", child);
+	model.addAttribute("age", childrenService.getAge(child));
+	model.addAttribute("wishes",childrenService.formatCarouselWishes(child.getWishes()));
+	model.addAttribute("loggedinuser", getPrincipal());
+	return "child";
+}
+
+
 	private String getPrincipal() {
 		String userName = null;
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();

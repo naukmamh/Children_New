@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -43,7 +44,7 @@
             </nav>
         </div>
     </header>
-    <img class="babyback" src="images/child-back.png" />
+    <img class="babyback" src="<c:url value='/static/images/child-back.png'/>" />
 
     <div id="fh5co-press" data-section="press">
         <div class="container">
@@ -52,15 +53,15 @@
                     <img class="child-photo to-animate" src="http://www.pravsworld.com/wp-content/uploads/2013/12/Child-Smile-e1402671131894.jpg" />
                 </div>
                 <div class="col-md-3 section-heading-main text-center">
-                    <h2 class="single-animate animate-press-1">Вася Іванов</h2>
+                    <h2 class="single-animate animate-press-1">${child.firstName} ${child.lastName}</h2>
                     <div class="child-info">
-                        <div>12 років</div>
-                        <div>Київ, дитбудинок "Сонечко"</div>
+                        <div>${age} років</div>
+                        <div>${child.house.city}, ${child.house.name}</div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 subtext single-animate animate-press-2">
                             <div class="main clearfix">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis accumsan tortor. Duis bibendum justo quis lectus tempor venenatis ut nec purus. Pellentesque est eros, auctor eu nisl ut, rhoncus rutrum purus. In fringilla convallis sapien a dictum. Duis consectetur ullamcorper laoreet. Aliquam laoreet tincidunt molestie.
+								${child.description}
                             </div>
                         </div>
                     </div>
@@ -77,71 +78,24 @@
                         <h2 class="single-animate animate-press-1">Бажання</h2>
                     </div>
                     <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
                     </ol>
-
                     <div class="carousel-inner">
-
-                        <div class="item active">
-                            <ul class="ch-grid">
-                                <li>
-                                    <div class="ch-item ch-img-1">
-                                        <div class="ch-info">
-                                            <h3>Котя</h3>
-                                            <a data-toggle="modal" data-target="#gift" class="hvr-grow btn btn-primary">Подарувати</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="ch-item ch-img-2">
-                                        <div class="ch-info">
-                                            <h3>Котя</h3>
-                                            <a data-toggle="modal" data-target="#gift" class="hvr-grow btn btn-primary">Подарувати</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="ch-item ch-img-3">
-                                        <div class="ch-info">
-                                            <h3>Котя</h3>
-                                            <a data-toggle="modal" data-target="#gift" class="hvr-grow btn btn-primary">Подарувати</a>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
+					<c:forEach items="${wishes}" var="set">
                         <div class="item">
                             <ul class="ch-grid">
+                        <c:forEach items="${set}" var="item">
                                 <li>
-                                    <div class="ch-item ch-img-1">
+                                    <div class="ch-item ch-img-1" style='background-image: url(${item.category.pictureUrl});'>
                                         <div class="ch-info">
-                                            <h3>Котя</h3>
+                                            <h3>${item.name }</h3>
                                             <a data-toggle="modal" data-target="#gift" class="hvr-grow btn btn-primary">Подарувати</a>
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="ch-item ch-img-2">
-                                        <div class="ch-info">
-                                            <h3>Котя</h3>
-                                            <a data-toggle="modal" data-target="#gift" class="hvr-grow btn btn-primary">Подарувати</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="urgently">Терміново!</span>
-                                    <div class="ch-item ch-img-3">
-                                        <div class="ch-info">
-                                            <h3>Котя</h3>
-                                            <a data-toggle="modal" data-target="#gift" class="hvr-grow btn btn-primary">Подарувати</a>
-                                        </div>
-                                    </div>
-                                </li>
+                        </c:forEach>
                             </ul>
                         </div>
-
+					</c:forEach>
                     </div>
                     <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
                     <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
@@ -196,36 +150,6 @@
                                                  <path style="fill:#EFEFEF;" d="M346.585,213.859v-9.058l-94.523-51.2l-94.523,51.2v9.058L94.524,186.29v-12.603l154.387-81.526 l3.151,1.575l3.151-1.575L409.6,173.293v12.603L346.585,213.859z"/>
                                                  <path style="fill:#DCDCDC;" d="M346.585,204.801v251.668l63.015-31.508V173.293L346.585,204.801z"/>
                                                  <path style="fill:#D1D1D1;" d="M94.523,425.354l63.015,31.508V205.195l-63.015-31.902C94.523,173.292,94.523,425.354,94.523,425.354 z"/>
-                                                 <g>
-                                                 </g>
-                                                 <g>
-                                                 </g>
-                                                 <g>
-                                                 </g>
-                                                 <g>
-                                                 </g>
-                                                 <g>
-                                                 </g>
-                                                 <g>
-                                                 </g>
-                                                 <g>
-                                                 </g>
-                                                 <g>
-                                                 </g>
-                                                 <g>
-                                                 </g>
-                                                 <g>
-                                                 </g>
-                                                 <g>
-                                                 </g>
-                                                 <g>
-                                                 </g>
-                                                 <g>
-                                                 </g>
-                                                 <g>
-                                                 </g>
-                                                 <g>
-                                                 </g>
                                             </svg>
 						                  </button>
                                         <div class="subtext-gift hvr-bubble-float-top">Здійснити мрію!</div>
@@ -253,20 +177,25 @@
         </div>
     </footer>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.style.switcher.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/mo.min.js"></script>
-    <script src="js/burst.js"></script>
+    <script src="<c:url value='/static/js/jquery.min.js'/>"></script>
+    <script src="<c:url value='/static/js/jquery.easing.1.3.js'/>"></script>
+    <script src="<c:url value='/static/js/bootstrap.min.js'/>"></script>
+    <script src="<c:url value='/static/js/jquery.waypoints.min.js'/>"></script>
+    <script src="<c:url value='/static/js/owl.carousel.min.js'/>"></script>
+    <script src="<c:url value='/static/js/jquery.style.switcher.js'/>"></script>
+    <script src="<c:url value='/static/js/mo.min.js'/>"></script>
+    <script src="<c:url value='/static/js/burst.js'/>"></script>
     <script>
         $(document).ready(function() {
             $('#myCarousel').carousel({
                 interval: 10000
-            })
+            });
+            var amount = $(".item").length;
+            console.log($(".item"));
+            for(var i=0; i<amount;i++){
+            	$(".carousel-indicators").append('<li data-target="#myCarousel" data-slide-to="'+i+'" '+((i!=0)?'':'class="active"')+'/>');
+            }
+            $($(".item")[0]).addClass('active');
         });
     </script>
 	
