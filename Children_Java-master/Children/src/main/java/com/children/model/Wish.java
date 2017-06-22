@@ -39,7 +39,7 @@ public class Wish {
 	@JoinColumn(name = "child_id")
 	private Child child;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "category_id")
 	private WishCategory category;
 	
@@ -73,6 +73,14 @@ public class Wish {
 
 	public void setChild(Child child) {
 		this.child = child;
+	}
+
+	public WishCategory getCategory() {
+		return category;
+	}
+
+	public void setCategory(WishCategory category) {
+		this.category = category;
 	}
 	
 

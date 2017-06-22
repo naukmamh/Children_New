@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.children.model.Child;
 import com.children.service.ChildrenService;
+import com.children.service.HouseService;
 import com.children.service.UserProfileService;
 import com.children.service.UserService;
 
@@ -36,6 +37,9 @@ public class ChildController {
 	
 	@Autowired
 	ChildrenService childrenService;
+	
+	@Autowired
+	HouseService houseService;
 
 @Transactional
 	@RequestMapping(value = { "/all" }, method = RequestMethod.GET)
@@ -52,7 +56,19 @@ public class ChildController {
 		model.addAttribute("loggedinuser", getPrincipal());
 		return "children";
 	}
-	
+
+@Transactional
+@RequestMapping(value = { "/child" }, method = RequestMethod.GET)
+public String oneChildren(ModelMap model, @RequestParam("id") int id) {
+	Child child = childrenService.findById(id);
+	model.addAttribute("child", child);
+	model.addAttribute("age", childrenService.getAge(child));
+	model.addAttribute("wishes",childrenService.formatCarouselWishes(child.getWishes()));
+	model.addAttribute("loggedinuser", getPrincipal());
+	return "child";
+}
+
+
 	private String getPrincipal() {
 		String userName = null;
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
