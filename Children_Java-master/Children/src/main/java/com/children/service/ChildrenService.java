@@ -2,8 +2,10 @@ package com.children.service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import com.children.model.Child;
+import com.children.model.Wish;
 
 public interface ChildrenService {
 	Child findById(int id);
@@ -19,4 +21,8 @@ public interface ChildrenService {
 	List<Child> findAllChildrenByHouse(int houseId);
 	
 	List<Child> findAllChildrenWithFilters(Map<String, String> filters);
+	
+	int getAge(Child child);
+	
+	List<List<Wish>> formatCarouselWishes(Set<Wish> childWishes);
 }

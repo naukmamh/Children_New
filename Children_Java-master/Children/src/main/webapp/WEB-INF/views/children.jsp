@@ -88,7 +88,7 @@
                             <h3 class="h2 fh5co-press-title">${child.firstName} <span class="fh5co-border"></span></h3>
                             <h2 class="fh5co-press-title years">12 років</h2>
                             <p>Мріє про родину</p>
-                            <p><a href="#" class="btn btn-primary btn-sm">Дізнатися більше</a></p>
+                            <p><a href="child?id=${child.id}" class="btn btn-primary btn-sm">Дізнатися більше</a></p>
                         </div>
                         
                     </div>

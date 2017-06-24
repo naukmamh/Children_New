@@ -1,5 +1,6 @@
 package com.children.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
@@ -20,10 +21,11 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.joda.time.LocalDate;
 
 @Entity
 @Transactional
-public class Child {
+public class Child implements Serializable {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(nullable=false)
 	private int id;
@@ -44,7 +46,7 @@ public class Child {
 	@Past
 	@NotEmpty
 	@Column
-	private Date birthDate;
+	private Date  birthDate;
 	
 	@NotNull
 	@NotEmpty
@@ -55,7 +57,7 @@ public class Child {
 	@Column
 	private String description;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "house_id")
 	private House house;
 	
@@ -86,11 +88,11 @@ public class Child {
 		this.firstName = firstName;
 	}
 
-	public Date getBirthDate() {
+	public Date  getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(Date street) {
+	public void setBirthDate(Date  street) {
 		this.birthDate = street;
 	}
 
@@ -102,6 +104,28 @@ public class Child {
 		this.description = description;
 	}
 
-	
+	public String getSex() {
+		return sex;
+	}
 
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public House getHouse() {
+		return house;
+	}
+
+	public void setHouse(House house) {
+		this.house = house;
+	}
+
+	public Set<Wish> getWishes() {
+		return wishes;
+	}
+
+	public void setWishes(Set<Wish> wishes) {
+		this.wishes = wishes;
+	}
+	
 }

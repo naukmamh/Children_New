@@ -53,6 +53,14 @@ public class House implements Serializable{
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "house", cascade = CascadeType.REMOVE)
 	private Set<Child> children; 
 	
+	public Set<Child> getChildren() {
+		return children;
+	}
+
+	public void setChildren(Set<Child> children) {
+		this.children = children;
+	}
+
 	public int getId() {
 		return id;
 	}
