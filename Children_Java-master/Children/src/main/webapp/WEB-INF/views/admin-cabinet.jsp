@@ -76,7 +76,7 @@
                         <div class="container">
                             <div class="row">
                             
-                            <c:forEach items="${request}" var="r">
+                            <c:forEach items="${requests}" var="r">
                                 <div class="col-md-6">
                                     <div class="fh5co-press-item to-animate">
                                         <div class="fh5co-press-img" style="background-image: url(http://www.mcgough.com/wp-content/uploads/2013/09/ChildHomeExt1_L.jpg)">
@@ -123,20 +123,22 @@
                     <div id="fh5co-press" data-section="press">
                         <div class="container">
                             <div class="row">
+                            <c:forEach items="${houses}" var="h">
                                 <div class="col-md-6">
                                     <div class="fh5co-press-item to-animate">
                                         <div class="fh5co-press-img" style="background-image: url(http://www.mcgough.com/wp-content/uploads/2013/09/ChildHomeExt1_L.jpg)">
                                         </div>
                                         <div class="fh5co-press-text">
-                                            <h3 class="h2 fh5co-press-title">Дитбудинок "Сонечко"<span class="fh5co-border"></span></h3>
+                                            <h3 class="h2 fh5co-press-title">${h.name }<span class="fh5co-border"></span></h3>
                                             <h2 class="fh5co-press-title years">120 дітей</h2>
-                                            <p class="address" style="margin-top: -45px !important; font-weight: 400 !important">Київ, вул. Сонячна, 20</p>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis accumsan tortor. </p>
+                                            <p class="address" style="margin-top: -45px !important; font-weight: 400 !important">${h.city }, ${h.street }, ${h.number }</p>
+                                            <p> ${h.description } </p>
                                             <a href="#" class="btn btn-primary btn-sm">Видалити будинок</a>
                                         </div>
 
                                     </div>
                                 </div>
+                                </c:forEach>
 
                                 <div class="col-md-6">
                                     <div class="fh5co-press-item to-animate">

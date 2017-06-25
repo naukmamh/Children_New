@@ -20,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.children.model.HouseRequest;
 import com.children.service.HouseRequestService;
+import com.children.service.HouseService;
 import com.children.service.UserProfileService;
 import com.children.service.UserService;
 @Controller
@@ -32,6 +33,9 @@ public class AdminCabinetController {
 
 	@Autowired
 	HouseRequestService houseRequestService;
+	
+	@Autowired
+	HouseService houseService;
 
 	@Autowired
 	MessageSource messageSource;
@@ -47,7 +51,8 @@ public class AdminCabinetController {
 	@RequestMapping(value = { "/admin" }, method = RequestMethod.GET)
 	public String getMainPage(ModelMap model) {
 		model.addAttribute("loggedinuser", getPrincipal());
-		model.addAttribute("request", houseRequestService.findAllHouseRequests());
+		model.addAttribute("requests", houseRequestService.findAllHouseRequests());
+		model.addAttribute("houses", houseService.findAllHouses());
 		return "admin-cabinet";
 	}
 	
