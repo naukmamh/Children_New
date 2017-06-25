@@ -15,6 +15,4 @@ public class MainPageController {
 		mav.setViewName("index");
 		return mav;
 	}
-	
-
 }
