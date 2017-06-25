@@ -67,7 +67,7 @@ if (result.hasErrors()) {
 			return "success";
 		}
 		Set<UserProfile> userProfiles = new HashSet<UserProfile>(); 
-		userProfiles.add(userProfileService.findById(0));
+		userProfiles.add(userProfileService.findById(1));
 		user.setUserProfiles(userProfiles);
 		userService.saveUser(user);
 
