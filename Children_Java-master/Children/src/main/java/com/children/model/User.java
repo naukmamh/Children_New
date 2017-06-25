@@ -43,7 +43,7 @@ public class User implements Serializable {
 	private String ssoId;
 	
 	@NotNull
-	@Length(min=6, max=20)
+	//@Length(min=6, max=20)
 	@NotEmpty
 	@Column(name = "password")
 	private String password;
