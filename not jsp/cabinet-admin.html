@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="css/style-chp.css">
     <link rel="stylesheet" href="css/style-child.css">
     <link rel="stylesheet" href="css/style-cab.css">
-    <link rel="stylesheet" type="text/css" href="css/tabsuser.css" />
     <link rel="stylesheet" href="css/style-admin.css">
 
 </head>
@@ -46,8 +45,9 @@
             <nav>
                 <ul>
                     <li></li>
-                    <li><a href="#section-linemove-1" class="icon fa fa-paper-plane"><span>Заявки</span></a></li>
+                    <li><a href="#section-linemove-2" class="icon fa fa-paper-plane"><span>Заявки</span></a></li>
                     <li><a href="#section-linemove-3" class="icon fa fa-home"><span>Всі будинки</span></a></li>
+                    <li><a href="#section-linemove-4" class="icon fa fa-sitemap"><span>Категорії подарунків</span></a></li>
                     <li></li>
                 </ul>
             </nav>
@@ -123,6 +123,61 @@
                                             <p class="address" style="margin-top: -45px !important; font-weight: 400 !important">Київ, вул. Сонячна, 20</p>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis accumsan tortor. </p>
                                             <a href="#" class="btn btn-primary btn-sm">Видалити будинок</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="fh5co-press-item to-animate">
+                                        <div class="fh5co-press-img" style="background-image: url(https://www.barnardos.org.uk/how-to-adopt-a-child-in-scotland-top-banner.jpg)">
+                                        </div>
+                                        <div class="fh5co-press-text">
+                                            <h3 class="h2 fh5co-press-title">Катя <span class="fh5co-border"></span></h3>
+                                            <h2 class="fh5co-press-title years">10 років</h2>
+                                            <p>Любить малювати</p>
+                                            <a href="#" class="btn btn-primary btn-sm">Дізнатися більше</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <center>
+
+                    <div>
+                        <ul class="pagination to-animate">
+                            <li class="previous">
+                                <a href="#fakelink" class="fui-arrow-left">Попередня</a>
+                            </li>
+                            <li class="active"><a href="#fakelink">1</a></li>
+                            <li class="hvr-sink"><a href="#fakelink">2</a></li>
+                            <li class="hvr-sink"><a href="#fakelink">3</a></li>
+                            <li class="hvr-sink"><a href="#fakelink">4</a></li>
+                            <li class="hvr-sink"><a href="#fakelink">5</a></li>
+                            <li class="hvr-sink"><a href="#fakelink">6</a></li>
+                            <li class="hvr-sink"><a href="#fakelink">7</a></li>
+                            <li class="hvr-sink"><a href="#fakelink">8</a></li>
+                            <li class="next">
+                                <a href="#fakelink" class="fui-arrow-right">Наступна</a>
+                            </li>
+                        </ul>
+                    </div>
+                </center>
+                        </div>
+                    </div>
+                </section>
+                <section id="section-linemove-4">
+                    <div id="fh5co-press" data-section="press">
+                        <button class="add-child-btn btn btn-primary hvr-grow to-animate" data-toggle="modal" data-target="#add-category"><i class="fa fa-plus"></i><span>Додати категорію</span></button>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="fh5co-press-item to-animate">
+                                        <div class="fh5co-press-img" style="background-image: url(http://www.mcgough.com/wp-content/uploads/2013/09/ChildHomeExt1_L.jpg)">
+                                        </div>
+                                        <div class="fh5co-press-text">
+                                            <h3 class="h2 fh5co-press-title">Одяг<span class="fh5co-border"></span></h3>
+                                           <a href="#" data-toggle="modal" data-target="#edit-category" class="btn btn-primary btn-sm">Редагувати</a>
+                                            <a href="#" data-toggle="modal" data-target="#delete-category" class="btn btn-primary btn-sm">Видалити</a>
                                         </div>
 
                                     </div>
@@ -251,6 +306,67 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn-sub" data-dismiss="modal">Додати</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div id="edit-category" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Редагувати категорію</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="title" placeholder="Назва" />
+                    <input type="text" id="photo" placeholder="URL фото" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-sub" data-dismiss="modal">Зберегти</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div id="add-category" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Додати категорію</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="title" placeholder="Назва" />
+                    <input type="text" id="photo" placeholder="URL фото" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-sub" data-dismiss="modal">Додати</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div id="delete-category" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Видалити категорію</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Ви впевнені, що бажаєте видалити цю категорію подарунків?</p>
+                </div>
+                <div class="modal-footer">
+                    <center>
+                        <nav class="cl-effect-5">
+                            <a href="#" data-dismiss="modal" class="btn btn-primary yes"><span data-hover="Так">Так</span></a>
+                            <a href="#" data-dismiss="modal" class="btn btn-primary no"><span data-hover="Ні">Ні</span></a>
+                        </nav>
+                    </center>
                 </div>
             </div>
 

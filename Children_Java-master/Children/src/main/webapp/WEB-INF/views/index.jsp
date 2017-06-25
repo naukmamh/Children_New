@@ -68,6 +68,7 @@ window.fbAsyncInit = function() {
                         <li><a href="#" data-nav-section="testimonials"><span>Як працює</span></a></li>
                         <li><a href="#" data-nav-section="press"><span>Діти</span></a></li>
                         <li><a href="#" class="login-btn hvr-reveal"><span>Увійти</span></a></li>
+                        <li><a id="user-nav"><i class="fa fa-user-circle-o"></i></a></li>
                     </ul>
                 </div>
             </nav>
