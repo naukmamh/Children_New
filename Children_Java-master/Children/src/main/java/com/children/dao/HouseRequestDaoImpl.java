@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import com.children.model.House;
 import com.children.model.HouseRequest;
 
-@Repository("houseDao")
+@Repository("houseDaoRequest")
 
 public class HouseRequestDaoImpl extends AbstractDao<Integer, HouseRequest> implements HouseRequestDao {
 	@Autowired

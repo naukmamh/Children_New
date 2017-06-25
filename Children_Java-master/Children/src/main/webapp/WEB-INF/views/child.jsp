@@ -206,15 +206,16 @@
                     <h4 class="modal-title">Додати бажання</h4>
                 </div>
                 <div class="modal-body">
-                	 <form id="add-wish-form" action="addWish" method="post">
-                        <input type="text" id="title-wish" placeholder="Назва" />
-                        <textarea id="desc-wish" placeholder="Опис"></textarea>
-                        <select>
-                        <option value="" disabled selected>Оберіть категорію бажання</option>
-                        <option value="cloth">Одяг</option>
-                        <option value="toys">Іграшки</option>
-                        <option value="yummy">Смаколики</option>
-                    </select>
+                	 <form id="add-wish-form" action="addWishMyOwn" method="GET">
+                        <input name="name" type="text" id="title-wish" placeholder="Назва" />
+                        <textarea name="description" id="desc-wish" placeholder="Опис"></textarea>
+                        <select name="categoryWish">
+	                        <option value="" disabled selected>Оберіть категорію бажання</option>
+	                        <option value="Animal">Тваринка</option>
+	                        <option value="Food">Їжа</option>
+	                        <option value="yummy">Смаколики</option>
+                    	</select>
+                    	<input style="display:none" name="childId" value="${child.id}">
                         <div class="sr"><input type="checkbox" class="srochno" /><label>Терміново потрібно</label></div>
                         <br/>
                         <input type="submit" class="btn-sub" value="Додати" />
