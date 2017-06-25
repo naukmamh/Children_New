@@ -206,16 +206,19 @@
                     <h4 class="modal-title">Додати бажання</h4>
                 </div>
                 <div class="modal-body">
-                    <select>
+                	 <form id="add-wish-form" action="addWish" method="post">
+                        <input type="text" id="title-wish" placeholder="Назва" />
+                        <textarea id="desc-wish" placeholder="Опис"></textarea>
+                        <select>
                         <option value="" disabled selected>Оберіть категорію бажання</option>
                         <option value="cloth">Одяг</option>
                         <option value="toys">Іграшки</option>
                         <option value="yummy">Смаколики</option>
                     </select>
-                    <div class="sr"><input type="checkbox" class="srochno" /><label>Терміново потрібно</label></div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn-sub" data-dismiss="modal">Додати</button>
+                        <div class="sr"><input type="checkbox" class="srochno" /><label>Терміново потрібно</label></div>
+                        <br/>
+                        <input type="submit" class="btn-sub" value="Додати" />
+                    </form>
                 </div>
             </div>
 
@@ -240,17 +243,19 @@
     <script src="<c:url value='/static/js/jquery.style.switcher.js'/>"></script>
     <script src="<c:url value='/static/js/mo.min.js'/>"></script>
     <script src="<c:url value='/static/js/burst.js'/>"></script>
+	<script src="http://malsup.github.com/jquery.form.js"></script> 
     <script>
         $(document).ready(function() {
             $('#myCarousel').carousel({
                 interval: 10000
             });
-            var amount = $(".item").length;
-            console.log($(".item"));
-            for(var i=0; i<amount;i++){
-            	$(".carousel-indicators").append('<li data-target="#myCarousel" data-slide-to="'+i+'" '+((i!=0)?'':'class="active"')+'/>');
-            }
-            $($(".item")[0]).addClass('active');
+            var elem = document.querySelector('.srochno');
+            var init = new Switchery(elem, {
+                color: '#b39edc'
+            });
+            $('#add-wish-form').ajaxForm(function() {
+                alert("Thank you for your comment!");
+            });
         });
     </script>
 	
