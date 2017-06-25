@@ -24,9 +24,21 @@
     <link rel="stylesheet" href="<c:url value='/static/css/style-cab.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/static/css/tabsuser.css'/>" />
     <link rel="stylesheet" href="<c:url value='/static/css/style-admin.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/usertab.css'/>">
 
 </head>
 <body>
+ <div class="usertab">
+        <div class="img-border"></div>
+        <div class="userpic"></div>
+        <center>
+        <div class="gifts-info"><div class="centered"><i class="fa fa-gift"></i><span>&nbsp;&nbsp;&nbsp;200 подарунків</span></div></div>
+            </center>
+        <ul class="btns">
+        <li><a>Кабінет</a></li>
+        <li><a>Вийти</a></li>
+        </ul>
+    </div>
     <header role="banner" id="fh5co-header">
         <div class="container">
             <nav class="navbar navbar-default">
@@ -275,9 +287,9 @@
     <script src="<c:url value='/static/js/jquery.waypoints.min.js'/>"></script>
     <script src="<c:url value='/static/js/owl.carousel.min.js'/>"></script>
     <script src="<c:url value='/static/js/jquery.style.switcher.js'/>"></script>
-    <script src="<c:url value='/static/js/main.js'/>"></script>
     <script src="<c:url value='/static/js/nlform.js'/>"></script>
     <script src="<c:url value='/static/js/cbpFWTabs.js'/>"></script>
+    <script src="<c:url value='/static/js/usertab.js'/>"></script>
     <script>
         (function() {
 

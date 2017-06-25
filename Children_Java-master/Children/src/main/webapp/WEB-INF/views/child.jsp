@@ -26,8 +26,20 @@
     <link rel="stylesheet" href="<c:url value='/static/css/style.css'/>">
     <link rel="stylesheet" href="<c:url value='/static/css/style-chp.css'/>">
     <link rel="stylesheet" href="<c:url value='/static/css/style-child.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/usertab.css'/>">
 </head>
 <body>
+ <div class="usertab">
+        <div class="img-border"></div>
+        <div class="userpic"></div>
+        <center>
+        <div class="gifts-info"><div class="centered"><i class="fa fa-gift"></i><span>&nbsp;&nbsp;&nbsp;200 подарунків</span></div></div>
+            </center>
+        <ul class="btns">
+        <li><a>Кабінет</a></li>
+        <li><a>Вийти</a></li>
+        </ul>
+    </div>
 	<header role="banner" id="fh5co-header">
         <div class="container">
             <nav class="navbar navbar-default">
@@ -244,6 +256,7 @@
     <script src="<c:url value='/static/js/mo.min.js'/>"></script>
     <script src="<c:url value='/static/js/burst.js'/>"></script>
 	<script src="http://malsup.github.com/jquery.form.js"></script> 
+	<script src="<c:url value='/static/js/usertab.js'/>"></script>
     <script>
         $(document).ready(function() {
             $('#myCarousel').carousel({
