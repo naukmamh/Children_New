@@ -1,6 +1,8 @@
 package com.children.controller;
 
+import java.util.HashSet;
 import java.util.Locale;
+import java.util.Set;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
@@ -23,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.children.dao.HouseDaoImpl;
 import com.children.model.House;
 import com.children.model.User;
+import com.children.model.UserProfile;
 import com.children.service.UserProfileService;
 import com.children.service.UserService;
 
@@ -63,7 +66,9 @@ if (result.hasErrors()) {
 			result.addError(ssoError);
 			return "success";
 		}
-
+		Set<UserProfile> userProfiles = new HashSet<UserProfile>(); 
+		userProfiles.add(userProfileService.findById(0));
+		user.setUserProfiles(userProfiles);
 		userService.saveUser(user);
 
 		model.addAttribute("loggedinuser", getPrincipal());
