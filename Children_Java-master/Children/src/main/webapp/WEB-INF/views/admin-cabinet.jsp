@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -71,33 +73,25 @@
                     <div id="fh5co-press" data-section="press">
                         <div class="container">
                             <div class="row">
+                            
+                            <c:forEach items="${request}" var="r">
                                 <div class="col-md-6">
                                     <div class="fh5co-press-item to-animate">
                                         <div class="fh5co-press-img" style="background-image: url(http://www.mcgough.com/wp-content/uploads/2013/09/ChildHomeExt1_L.jpg)">
                                         </div>
                                         <div class="fh5co-press-text">
-                                            <h3 class="h2 fh5co-press-title">Дитбудинок "Сонечко"<span class="fh5co-border"></span></h3>
-                                            <p><strong>Адреса: </strong>Київ, вул. Сонячна, 20</p>
-                                            <p style="margin-top: -40px !important"><strong>Адреса для звернення: </strong>childhome@gmail.com</p>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis accumsan tortor. </p>
+                                            <h3 class="h2 fh5co-press-title">${r.name}<span class="fh5co-border"></span></h3>
+                                            <p><strong>Адреса: </strong>${r.city}, ${r.street},  ${r.number } </p>
+                                            <p style="margin-top: -40px !important"><strong>Адреса для звернення: </strong>${r.email }</p>
+                                            <p>${r.description } </p>
                                             <a href="#" class="btn btn-primary btn-sm">Зареєструвати</a>
                                         </div>
 
                                     </div>
                                 </div>
+                                </c:forEach>
 
-                                <div class="col-md-6">
-                                    <div class="fh5co-press-item to-animate">
-                                        <div class="fh5co-press-img" style="background-image: url(https://www.barnardos.org.uk/how-to-adopt-a-child-in-scotland-top-banner.jpg)">
-                                        </div>
-                                        <div class="fh5co-press-text">
-                                            <h3 class="h2 fh5co-press-title">Катя <span class="fh5co-border"></span></h3>
-                                            <h2 class="fh5co-press-title years">10 років</h2>
-                                            <p>Любить малювати</p>
-                                            <a href="#" class="btn btn-primary btn-sm">Дізнатися більше</a>
-                                        </div>
-                                    </div>
-                                </div>
+     
                             </div>
                             <center>
 
