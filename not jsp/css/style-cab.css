@@ -126,3 +126,121 @@ label {
     z-index: -3;
     filter: blur(1px);
 }
+
+.gift-info h2{
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 16px !important;
+    color: #888 !important;
+    margin-top: -10px !important;
+    margin-bottom: 40px !important;
+}
+
+.gift-info p {
+    margin-bottom: 10px !important;
+    margin-top: -40px !important;
+}
+
+#cancel .modal-body{
+    text-align:center;
+}
+
+#cancel .modal-body p{
+    margin-top: 20px;
+}
+
+#cancel .cl-effect-5 a{
+    padding: 15px 30px;
+}
+
+#cancel .cl-effect-5 span{
+    margin-top: -10px;
+}
+
+#cancel .cl-effect-5 a span::before {
+	position: absolute;
+	top: 200%;
+    text-align: center;
+    left: 0%;
+	content: attr(data-hover);
+	font-weight: 700;
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+#cancel .cl-effect-5 .yes{
+    background-color: #96CA2D;
+}
+
+#cancel .cl-effect-5 .no{
+    background-color: #d76b60;
+}
+
+.social {
+    margin-left: -3% !important;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.social .link {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px dashed #ccc;
+  background-clip: content-box;
+  padding: 10px;
+  transition: .5s;
+  color: #D7D0BE;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 40px;
+    margin-top: 130px;
+}
+
+.social .link span {
+  display: block;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.social .link:hover {
+  padding: 20px;
+  color: white;
+  margin-left: -5px;
+  transform: translateX(10px) rotate(360deg);
+}
+
+.social .link.google-plus {
+  background-color: tomato;
+  color: white;
+}
+
+.social .link.twitter {
+  background-color: #00ACEE;
+  color: white;
+}
+
+.social .link.facebook {
+  background-color: #3B5998;
+  color: white;
+}
+
+.share p{
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    color: #888 !important;
+}
+
+.share{
+    height: 180px;
+}
+
