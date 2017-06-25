@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/tabs.css" />
     <link rel="stylesheet" type="text/css" href="css/tabstyles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/component.css">
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style-chp.css">
@@ -63,13 +64,18 @@
                                 <div class="child-info">
                                     <div>220 подарунків</div>
                                 </div>
+                                <div class="share">
+                                    <p>Розкажи про свої подарунки друзям!</p>
+                                    <div class="social">
+                                        <a href="https://facebook.com/ondrej.p.barta" class="link facebook" target="_parent"><span class="fa fa-facebook-square"></span></a>
+                                    </div>
+                                </div>
                                 <button style="margin-top: 20px" class="btn btn-primary hvr-grow to-animate" data-toggle="modal" data-target="#edit-info-house">Редагувати</button>
                             </div>
                         </div>
                     </div>
                 </section>
                 <section id="section-linemove-3">
-                    <button class="add-child-btn btn btn-primary hvr-grow to-animate" data-toggle="modal" data-target="#add-child"><i class="fa fa-plus"></i><span>Додати дитину</span></button>
                     <div id="fh5co-press" data-section="press">
                         <div class="container">
                             <div class="row">
@@ -78,10 +84,15 @@
                                         <div class="fh5co-press-img" style="background-image: url(http://www.pravsworld.com/wp-content/uploads/2013/12/Child-Smile-e1402671131894.jpg)">
                                         </div>
                                         <div class="fh5co-press-text">
-                                            <h3 class="h2 fh5co-press-title">Вася <span class="fh5co-border"></span></h3>
-                                            <h2 class="fh5co-press-title years">12 років</h2>
-                                            <p>Мріє про родину</p>
-                                            <a href="#" class="btn btn-primary btn-sm">Дізнатися більше</a>
+                                            <h3 class="h2 fh5co-press-title">Іграшка для <a href="#linktochild">Вася</a><span class="fh5co-border"></span></h3>
+                                            <div class="gift-info">
+                                                <h2 class="fh5co-press-title years">Дитбудинок "Сонечко"</h2>
+                                                <p><strong>Номер замовлення:</strong> 4892348934</p>
+                                                <p><strong>Дата створення:</strong> 12-12-2016</p>
+                                            </div>
+                                            <nav class="cl-effect-5">
+                                                <a href="#" data-toggle="modal" data-target="#cancel" class="btn btn-primary"><span data-hover="Скасувати">Статус: заплановано</span></a>
+                                            </nav>
                                         </div>
 
                                     </div>
@@ -102,25 +113,25 @@
                             </div>
                             <center>
 
-                    <div>
-                        <ul class="pagination to-animate">
-                            <li class="previous">
-                                <a href="#fakelink" class="fui-arrow-left">Попередня</a>
-                            </li>
-                            <li class="active"><a href="#fakelink">1</a></li>
-                            <li class="hvr-sink"><a href="#fakelink">2</a></li>
-                            <li class="hvr-sink"><a href="#fakelink">3</a></li>
-                            <li class="hvr-sink"><a href="#fakelink">4</a></li>
-                            <li class="hvr-sink"><a href="#fakelink">5</a></li>
-                            <li class="hvr-sink"><a href="#fakelink">6</a></li>
-                            <li class="hvr-sink"><a href="#fakelink">7</a></li>
-                            <li class="hvr-sink"><a href="#fakelink">8</a></li>
-                            <li class="next">
-                                <a href="#fakelink" class="fui-arrow-right">Наступна</a>
-                            </li>
-                        </ul>
-                    </div>
-                </center>
+                                <div>
+                                    <ul class="pagination to-animate">
+                                        <li class="previous">
+                                            <a href="#fakelink" class="fui-arrow-left">Попередня</a>
+                                        </li>
+                                        <li class="active"><a href="#fakelink">1</a></li>
+                                        <li class="hvr-sink"><a href="#fakelink">2</a></li>
+                                        <li class="hvr-sink"><a href="#fakelink">3</a></li>
+                                        <li class="hvr-sink"><a href="#fakelink">4</a></li>
+                                        <li class="hvr-sink"><a href="#fakelink">5</a></li>
+                                        <li class="hvr-sink"><a href="#fakelink">6</a></li>
+                                        <li class="hvr-sink"><a href="#fakelink">7</a></li>
+                                        <li class="hvr-sink"><a href="#fakelink">8</a></li>
+                                        <li class="next">
+                                            <a href="#fakelink" class="fui-arrow-right">Наступна</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </center>
                         </div>
                     </div>
                 </section>
@@ -128,43 +139,23 @@
         </div>
     </section>
 
-    <div id="edit-info-house" class="modal fade" role="dialog">
+    <div id="cancel" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Редагувати інформацію про будинок</h4>
+                    <h4 class="modal-title">Скасувати запланований подарунок</h4>
                 </div>
                 <div class="modal-body">
-                    <input type="text" id="title" placeholder="Назва" />
-                    <textarea id="description" placeholder="Опис"></textarea>
-                    <input type="text" id="address" placeholder="Адреса" />
-                    <input type="text" id="pic" placeholder="URL фото будинку" />
+                    <p>Ви впевнені, що більше не плануєте цей подарунок?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn-sub" data-dismiss="modal">Зберегти</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    
-    <div id="add-child" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Додати дитину</h4>
-                </div>
-                <div class="modal-body">
-                    <input type="text" id="firstname" placeholder="Ім'я" />
-                    <input type="text" id="lastname" placeholder="Прізвище" />
-                    <textarea id="description" placeholder="Опис"></textarea>
-                    <label>Дата народження</label>
-                    <input type="date" id="birth"/>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn-sub" data-dismiss="modal">Додати</button>
+                    <center>
+                        <nav class="cl-effect-5">
+                            <a href="#" class="btn btn-primary yes"><span data-hover="Так">Так</span></a>
+                            <a href="#" class="btn btn-primary no"><span data-hover="Ні">Ні</span></a>
+                        </nav>
+                    </center>
                 </div>
             </div>
 
