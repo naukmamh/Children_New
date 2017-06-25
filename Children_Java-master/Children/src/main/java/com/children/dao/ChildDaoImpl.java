@@ -90,7 +90,7 @@ public class ChildDaoImpl extends AbstractDao<Integer, Child> implements ChildDa
 				criteria.add(Expression.eq("h.city", filters.get(s)));
 				break;
 			default:
-				//criteria.add(Restrictions.eq(s, filters.get(s)));
+				criteria.add(Restrictions.eq(s, filters.get(s)));
 				break;
 			}
 		}

@@ -14,4 +14,5 @@ public interface WishCategoryDao {
 	
 	List<WishCategory> findAllWishCategories();
 	
+	WishCategory findByName(String name);	
 }
