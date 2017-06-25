@@ -276,3 +276,43 @@ input:focus::-ms-input-placeholder {
 	-moz-transition-delay: 0s;
 	transition-delay: 0s;
 }
+
+.cl-effect-5 a {
+    margin-top: 15px !important;
+    font-weight: 300 !important;
+    color: #666;
+    font-size: 16px;
+	overflow: hidden;
+	padding: 0 4px;
+	height: 1em;
+    border-bottom: none !important;
+}
+
+.cl-effect-5 a span {
+    margin-top: -6px;
+    font-weight: 300 !important;
+	position: relative;
+	display: inline-block;
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.cl-effect-5 a span::before {
+	position: absolute;
+	top: 200%;
+    text-align: center;
+    left: 25%;
+	content: attr(data-hover);
+	font-weight: 700;
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.cl-effect-5 a:hover span,
+.cl-effect-5 a:focus span {
+	-webkit-transform: translateY(-200%);
+	-moz-transform: translateY(-200%);
+	transform: translateY(-200%);
+}
