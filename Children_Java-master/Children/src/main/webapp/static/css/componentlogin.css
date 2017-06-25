@@ -224,13 +224,15 @@
 .morph-button-modal-2.open .morph-content {
 	margin: -210px 0 0 -170px;
 	width: 340px;
-	height: 360px;
+	height: 400px;
+	overflow: scroll;
 }
 
 .morph-button-modal-3.open .morph-content {
 	margin: -255px 0 0 -210px;
 	width: 420px;
-	height: 610px;
+	height: 500px;
+	overflow: scroll;
 }
 
 .morph-button-modal-3.open .morph-content > div {
@@ -496,4 +498,8 @@
 	.morph-button-sidebar.open .morph-content {
 		height: 100% !important;
 	}
+}
+
+input{
+	margin-top: 0px;
 }
