@@ -258,7 +258,8 @@ h6 {
 #fh5co-about-us,
 #fh5co-testimonials,
 #fh5co-press,
-#fh5co-join {
+#fh5co-join,
+#fh5co-applic{
     padding: 5em 0;
 }
 
@@ -964,3 +965,43 @@ input:focus, textarea:focus{
   box-shadow: inset 0 -2px #62c2e4;
 }
 
+#fh5co-applic{
+    background: #ee9a9b;
+}
+
+#fh5co-applic h2, #fh5co-applic h3{
+    color: white;
+}
+
+#fh5co-applic h2:after{
+    color: white;
+}
+
+#applic input, #applic textarea{
+    margin-top: 0px;
+}
+
+#fh5co-applic .btn{
+    margin-top: -60px;
+}
+.modal-title {
+    color: white;
+    font-size: 20px
+}
+
+.modal-content{
+    border-radius: 20px;
+}
+
+::-webkit-input-placeholder {
+  color: #ccc !important;
+}
+::-moz-placeholder { 
+  color: #ccc !important;
+}
+:-ms-input-placeholder {
+  color: #ccc !important;
+}
+:-moz-placeholder {
+  color: #ccc !important;
+}
