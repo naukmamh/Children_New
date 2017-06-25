@@ -16,5 +16,7 @@ public interface HouseRequestService {
 	void deleteHouseRequest(int id);
 
 	List<HouseRequest> findAllHouseRequests();
+	
+	void registerHouse(int requestId);
 
 }

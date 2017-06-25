@@ -13,6 +13,7 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -48,6 +49,16 @@ public class AdminCabinetController {
 		model.addAttribute("loggedinuser", getPrincipal());
 		model.addAttribute("request", houseRequestService.findAllHouseRequests());
 		return "admin-cabinet";
+	}
+	
+	@Transactional
+	@RequestMapping(value = { "/register/{requestId}" }, method = RequestMethod.GET)
+	public String registerHouse(@PathVariable int requestId, ModelMap model) {
+		System.out.println("____________-reg");
+		model.addAttribute("loggedinuser", getPrincipal());
+		houseRequestService.registerHouse(requestId);
+	
+		return "redirect:/admin";
 	}
 
 //	@Transactional
