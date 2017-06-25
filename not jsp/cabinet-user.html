@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/style-chp.css">
     <link rel="stylesheet" href="css/style-child.css">
     <link rel="stylesheet" href="css/style-cab.css">
+    <link rel="stylesheet" href="css/tabsuser.css">
 
 </head>
 
@@ -152,13 +153,31 @@
                 <div class="modal-footer">
                     <center>
                         <nav class="cl-effect-5">
-                            <a href="#" class="btn btn-primary yes"><span data-hover="Так">Так</span></a>
-                            <a href="#" class="btn btn-primary no"><span data-hover="Ні">Ні</span></a>
+                            <a href="#" data-dismiss="modal" class="btn btn-primary yes"><span data-hover="Так">Так</span></a>
+                            <a href="#" data-dismiss="modal" class="btn btn-primary no"><span data-hover="Ні">Ні</span></a>
                         </nav>
                     </center>
                 </div>
             </div>
 
+        </div>
+    </div>
+    
+    <div id="edit-user" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Редагувати інформацію</h4>
+                </div>
+                <div class="modal-body">
+                     <input type="text" id="pass" placeholder="Новий пароль" />
+                    <input type="text" id="av" placeholder="URL аватарки" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-sub" data-dismiss="modal">Зберегти</button>
+                </div>
+            </div>
         </div>
     </div>
 

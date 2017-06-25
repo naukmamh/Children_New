@@ -148,15 +148,20 @@ label {
     margin-top: 20px;
 }
 
-#cancel .cl-effect-5 a{
+#cancel .cl-effect-5 a, #accept .cl-effect-5 a{
     padding: 15px 30px;
 }
 
-#cancel .cl-effect-5 span{
+#accept .cl-effect-5 a{
+    margin-bottom: 20px;
+}
+
+
+#cancel .cl-effect-5 span, #accept .cl-effect-5 span{
     margin-top: -10px;
 }
 
-#cancel .cl-effect-5 a span::before {
+#cancel .cl-effect-5 a span::before, #accept .cl-effect-5 a span::before {
 	position: absolute;
 	top: 200%;
     text-align: center;
@@ -168,11 +173,11 @@ label {
 	transform: translate3d(0,0,0);
 }
 
-#cancel .cl-effect-5 .yes{
+#cancel .cl-effect-5 .yes, #accept .cl-effect-5 .yes{
     background-color: #96CA2D;
 }
 
-#cancel .cl-effect-5 .no{
+#cancel .cl-effect-5 .no, #accept .cl-effect-5 .no{
     background-color: #d76b60;
 }
 
@@ -243,4 +248,24 @@ label {
 .share{
     height: 180px;
 }
+
+.cl-effect-5 a span::before {
+	position: absolute;
+	top: 200%;
+    text-align: center;
+    left: 0%;
+	content: attr(data-hover);
+	font-weight: 700;
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+#edit-info-house .btn{
+    color: #999;
+    border: 2px solid #ebebeb;
+    border-radius: 15px;
+    float: right;
+}
+
 

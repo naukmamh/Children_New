@@ -285,6 +285,7 @@ input:focus::-ms-input-placeholder {
 	overflow: hidden;
 	padding: 0 4px;
 	height: 1em;
+    border-bottom: none !important;
 }
 
 .cl-effect-5 a span {
