@@ -79,17 +79,19 @@
 						<div class="content-style-form content-style-form-2">
 							<span class="icon icon-close">&times;</span>
 							<h2>Sign Up</h2>
-							<springForm:form method="POST" modelAttribute="house"
-								action="registration">
-								 <p><label>Назва</label><springForm:input path="name" type="text" /><springForm:errors path="name" cssClass="error" /></p>
+							<springForm:form method="POST" modelAttribute="user" action="userreg">
+								 <p><label>Ім'я</label><springForm:input path="firstName" type="text" /><springForm:errors path="firstName" cssClass="error" /></p>
                                     <%-- <p><label>Password</label><springForm:input  path="password" type="password" /></p> --%>
-                                    <p><label>Місто</label><springForm:input  path="city" type="password" /><springForm:errors path="city" cssClass="error" /></p>
-                                     <p><label>Вулиця</label><springForm:input path="street" type="password" /><springForm:errors path="street" cssClass="error" /></p>
-                                      <p><label>Номер будинку</label><springForm:input path="number" type="password" /><springForm:errors path="number" cssClass="error" /></p>
-                                       <p><label>Опис</label><springForm:input path="description" type="password" /><springForm:errors path="description"
-												cssClass="error" /></p>
+                                    <p><label>Прізвище</label><springForm:input  path="lastName" type="text" /><springForm:errors path="lastName" cssClass="error" /></p>
+                                    <p><label>E-mail</label><springForm:input  path="email" type="text" /><springForm:errors path="email" cssClass="error" /></p>
+                                     
+                                     <p><label>Логін</label><springForm:input path="ssoId" type="text" /><springForm:errors path="ssoId" cssClass="error" /></p>
+                                      <p><label>Пароль</label><springForm:input path="password" type="password" /></p>
+                                       
                                     <p><input class="btn-submit" type="submit" value="Register"></p>
 							</springForm:form>
+							
+						
 						</div>
 					</div>
 				</div>
