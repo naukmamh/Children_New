@@ -130,7 +130,7 @@
                                         </div>
                                         <div class="fh5co-press-text">
                                             <h3 class="h2 fh5co-press-title">${h.name }<span class="fh5co-border"></span></h3>
-                                            <h2 class="fh5co-press-title years">120 дітей</h2>
+                                            <h2 class="fh5co-press-title years">${h.numberOfChildren } дітей</h2>
                                             <p class="address" style="margin-top: -45px !important; font-weight: 400 !important">${h.city }, ${h.street }, ${h.number }</p>
                                             <p> ${h.description } </p>
                                             <a href="#" class="btn btn-primary btn-sm">Видалити будинок</a>

@@ -1,5 +1,7 @@
 package com.children.controller;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.children.model.House;
 import com.children.model.HouseRequest;
 import com.children.service.HouseRequestService;
 import com.children.service.HouseService;
@@ -52,6 +55,10 @@ public class AdminCabinetController {
 	public String getMainPage(ModelMap model) {
 		model.addAttribute("loggedinuser", getPrincipal());
 		model.addAttribute("requests", houseRequestService.findAllHouseRequests());
+		List<House> houses = houseService.findAllHouses();
+		for(House h: houses){
+			h.setNumberOfChildren(houseService.getNumberOfChildren(h.getId()));
+		}
 		model.addAttribute("houses", houseService.findAllHouses());
 		return "admin-cabinet";
 	}
