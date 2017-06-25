@@ -49,6 +49,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#"><span>Головна</span></a></li>
                         <li><a href="#" class="login-btn hvr-reveal"><span>Увійти</span></a></li>
+                        <li><a id="user-nav"><i class="fa fa-user-circle-o"></i></a></li>
                     </ul>
                 </div>
             </nav>
