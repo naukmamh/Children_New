@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags/form"
+	prefix="springForm"%>
 <html class="no-js">
 
 <head>
@@ -98,6 +101,7 @@
         <div class="container">
             <div class="row row-bottom-padded-lg" id="about-us">
                 <div class="col-md-12 section-heading text-center">
+                
                     <h2 class="to-animate">Про нас</h2>
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2 to-animate">
@@ -274,20 +278,25 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Заявка на реєстрацію будинка</h4>
                 </div>
+                <springForm:form method="POST" modelAttribute="request"
+								action="addRequest">
                 <div class="modal-body">
-                    <input type="text" id="fname" placeholder="Ім'я" />
-                    <input type="text" id="lname" placeholder="Прізвище" />
-                    <input type="text" id="login" placeholder="Логін" />
-                    <input type="text" id="password" placeholder="Пароль" />
-                    <input type="text" id="email" placeholder="E-mail" />
-                    <input type="text" id="title" placeholder="Назва" />
-                    <textarea id="description" placeholder="Опис"></textarea>
-                    <input type="text" id="address" placeholder="Адреса" />
-                    <input type="text" id="pic" placeholder="URL фото будинку" />
+                    <springForm:input path="firstName" type="text" id="fname" placeholder="Ім'я" />
+                    <springForm:input path="lastName" type="text" id="lname" placeholder="Прізвище" />
+                    <springForm:input path="ssoId" type="text" id="login" placeholder="Логін" />
+                    <springForm:input path="password" type="password" id="password" placeholder="Пароль" />
+                    <springForm:input path="email" type="text" id="email" placeholder="E-mail" />
+                    <springForm:input path="name" type="text" id="title" placeholder="Назва" />
+                    <springForm:textarea path="description" id="description" placeholder="Опис"></springForm:textarea>
+                    <springForm:input path="city" type="text" id="address" placeholder="Місто" />
+                    <springForm:input path="street" type="text" id="address" placeholder="Вулиця" />
+                    <springForm:input path="number" type="text" id="address" placeholder="Номер" />
+                    <springForm:input path="photoUrl" type="text" id="pic" placeholder="URL фото будинку" />
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn-sub" data-dismiss="modal">Зберегти</button>
+                <input class="btn-submit" type="submit" value="Register">
                 </div>
+                </springForm:form>
             </div>
 
         </div>

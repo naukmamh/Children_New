@@ -79,7 +79,18 @@ public class HouseRequest implements Serializable{
 	@Email
 	@Column(name = "email")
 	private String email;
+	
+	@Column(name = "photo_url")
+	private String photoUrl;
 
+
+	public String getPhotoUrl() {
+		return photoUrl;
+	}
+
+	public void setPhotoUrl(String photoUrl) {
+		this.photoUrl = photoUrl;
+	}
 
 	public String getSsoId() {
 		return ssoId;
