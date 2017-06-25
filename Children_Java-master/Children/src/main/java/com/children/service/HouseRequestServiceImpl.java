@@ -91,6 +91,7 @@ public class HouseRequestServiceImpl implements HouseRequestService{
 		h.setDescription(r.getDescription());
 		userService.saveUser(u);
 		houseService.saveHouse(h);
+		houseRequestDao.deleteById(requestId);
 		
 	}
 
