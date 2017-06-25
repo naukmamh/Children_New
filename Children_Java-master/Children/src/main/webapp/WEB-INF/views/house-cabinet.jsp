@@ -1,0 +1,320 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Кабінет house</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Yanone+Kaffeesatz" rel="stylesheet" type='text/css'>
+    <link rel="stylesheet" href="<c:url value='/static/css/animate.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/bootstrap.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/hover.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/flat-ui.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/static/css/tabs.css'/>" />
+    <link rel="stylesheet" type="text/css" href="<c:url value='/static/css/tabstyles.css'/>" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<c:url value='/static/css/component.css'/>">
+    
+	<link rel="stylesheet" href="<c:url value='/static/css/style.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/style-chp.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/style-child.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/style-cab.css'/>">
+
+</head>
+<body>
+  <header role="banner" id="fh5co-header">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+                    <a class="navbar-brand" href="index.html">Children</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span>Головна</span></a></li>
+                        <li><a href="#" class="login-btn hvr-reveal"><span>Увійти</span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section>
+        <div class="tabs tabs-style-linemove">
+            <nav>
+                <ul>
+                    <li></li>
+                    <li><a href="#section-linemove-1" class="icon fa fa-home"><span>Будинок</span></a></li>
+                    <li><a href="#section-linemove-2" class="icon fa fa-child"><span>Діти</span></a></li>
+                    <li><a href="#section-linemove-3" class="icon fa fa-gift"><span>Подарунки</span></a></li>
+                    <li></li>
+                </ul>
+            </nav>
+            <div class="content-wrap">
+                <section id="section-linemove-1"></section>
+                <section id="section-linemove-2">
+                    <img class="back-house" src="<c:url value='/static/images/child-back.png'/>" />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="house-img to-animate"></div>
+                        </div>
+                        <div class="col-md-6 section-heading-main text-center">
+                            <div>
+                                <h2 class="single-animate animate-press-1">Дитбудинок "Сонечко"</h2>
+                                <div class="child-info">
+                                    <div>120 дітей</div>
+                                    <div>Київ, вул. Сонячна, 12</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 subtext single-animate animate-press-2">
+                                        <div class="main clearfix">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis accumsan tortor. Duis bibendum justo quis lectus tempor venenatis ut nec purus. Pellentesque est eros, auctor eu nisl ut, rhoncus rutrum purus. In fringilla convallis sapien a dictum. Duis consectetur ullamcorper laoreet. Aliquam laoreet tincidunt molestie.
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary hvr-grow to-animate" data-toggle="modal" data-target="#edit-info-house">Редагувати</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="section-linemove-3">
+                    <button class="add-child-btn btn btn-primary hvr-grow to-animate" data-toggle="modal" data-target="#add-child"><i class="fa fa-plus"></i><span>Додати дитину</span></button>
+                    <div id="fh5co-press" data-section="press">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="fh5co-press-item to-animate">
+                                        <div class="fh5co-press-img" style="background-image: url(http://www.pravsworld.com/wp-content/uploads/2013/12/Child-Smile-e1402671131894.jpg)">
+                                        </div>
+                                        <div class="fh5co-press-text">
+                                            <h3 class="h2 fh5co-press-title">Вася <span class="fh5co-border"></span></h3>
+                                            <h2 class="fh5co-press-title years">12 років</h2>
+                                            <p>Мріє про родину</p>
+                                            <a href="#" class="btn btn-primary btn-sm">Дізнатися більше</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="fh5co-press-item to-animate">
+                                        <div class="fh5co-press-img" style="background-image: url(https://www.barnardos.org.uk/how-to-adopt-a-child-in-scotland-top-banner.jpg)">
+                                        </div>
+                                        <div class="fh5co-press-text">
+                                            <h3 class="h2 fh5co-press-title">Катя <span class="fh5co-border"></span></h3>
+                                            <h2 class="fh5co-press-title years">10 років</h2>
+                                            <p>Любить малювати</p>
+                                            <a href="#" class="btn btn-primary btn-sm">Дізнатися більше</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <center>
+
+                    <div>
+                        <ul class="pagination to-animate">
+                            <li class="previous">
+                                <a href="#fakelink" class="fui-arrow-left">Попередня</a>
+                            </li>
+                            <li class="active"><a href="#fakelink">1</a></li>
+                            <li class="hvr-sink"><a href="#fakelink">2</a></li>
+                            <li class="hvr-sink"><a href="#fakelink">3</a></li>
+                            <li class="hvr-sink"><a href="#fakelink">4</a></li>
+                            <li class="hvr-sink"><a href="#fakelink">5</a></li>
+                            <li class="hvr-sink"><a href="#fakelink">6</a></li>
+                            <li class="hvr-sink"><a href="#fakelink">7</a></li>
+                            <li class="hvr-sink"><a href="#fakelink">8</a></li>
+                            <li class="next">
+                                <a href="#fakelink" class="fui-arrow-right">Наступна</a>
+                            </li>
+                        </ul>
+                    </div>
+                </center>
+                        </div>
+                    </div>
+                </section>
+                <section id="section-linemove-4">
+                    <div id="fh5co-press" data-section="press">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="fh5co-press-item to-animate">
+                                        <div class="fh5co-press-img" style="background-image: url(http://www.pravsworld.com/wp-content/uploads/2013/12/Child-Smile-e1402671131894.jpg)">
+                                        </div>
+                                        <div class="fh5co-press-text">
+                                            <h3 class="h2 fh5co-press-title">Іграшка для <a href="#linktochild">Вася</a><span class="fh5co-border"></span></h3>
+                                            <div class="gift-info">
+                                                <h2 class="fh5co-press-title years"><strong>від </strong>user123</h2>
+                                                <p><strong>Номер замовлення:</strong> 4892348934</p>
+                                                <p><strong>Дата створення:</strong> 12-12-2016</p>
+                                            </div>
+                                            <nav class="cl-effect-5">
+                                                <a href="#" data-toggle="modal" data-target="#accept" class="btn btn-primary"><span data-hover="Обробити подарунок">Статус: заплановано</span></a>
+                                            </nav>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="fh5co-press-item to-animate">
+                                        <div class="fh5co-press-img" style="background-image: url(https://www.barnardos.org.uk/how-to-adopt-a-child-in-scotland-top-banner.jpg)">
+                                        </div>
+                                        <div class="fh5co-press-text">
+                                            <h3 class="h2 fh5co-press-title">Катя <span class="fh5co-border"></span></h3>
+                                            <h2 class="fh5co-press-title years">10 років</h2>
+                                            <p>Любить малювати</p>
+                                            <a href="#" class="btn btn-primary btn-sm">Дізнатися більше</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <center>
+
+                                <div>
+                                    <ul class="pagination to-animate">
+                                        <li class="previous">
+                                            <a href="#fakelink" class="fui-arrow-left">Попередня</a>
+                                        </li>
+                                        <li class="active"><a href="#fakelink">1</a></li>
+                                        <li class="hvr-sink"><a href="#fakelink">2</a></li>
+                                        <li class="hvr-sink"><a href="#fakelink">3</a></li>
+                                        <li class="hvr-sink"><a href="#fakelink">4</a></li>
+                                        <li class="hvr-sink"><a href="#fakelink">5</a></li>
+                                        <li class="hvr-sink"><a href="#fakelink">6</a></li>
+                                        <li class="hvr-sink"><a href="#fakelink">7</a></li>
+                                        <li class="hvr-sink"><a href="#fakelink">8</a></li>
+                                        <li class="next">
+                                            <a href="#fakelink" class="fui-arrow-right">Наступна</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                </section>
+                <section id="section-linemove-5"></section>
+            </div>
+        </div>
+    </section>
+
+    <div id="edit-info-house" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Редагувати інформацію про будинок</h4>
+                </div>
+                <div class="modal-body">
+                    <button class="btn btn-default" data-toggle="modal" data-target="#del-house">Видалити будинок</button>
+                    <input type="text" id="title" placeholder="Назва" />
+                    <textarea id="description" placeholder="Опис"></textarea>
+                    <input type="text" id="address" placeholder="Адреса" />
+                    <input type="text" id="pic" placeholder="URL фото будинку" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-sub" data-dismiss="modal">Зберегти</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div id="del-house" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Видалити будинок</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Ви впевнені, що бажаєте видалити будинок?</p>
+                </div>
+                <div class="modal-footer">
+                    <center>
+                        <nav class="cl-effect-5">
+                            <a href="#" data-dismiss="modal" class="btn btn-primary yes"><span data-hover="Так">Так</span></a>
+                            <a href="#" data-dismiss="modal" class="btn btn-primary no"><span data-hover="Ні">Ні</span></a>
+                        </nav>
+                    </center>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div id="accept" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Обробити подарунок</h4>
+                </div>
+                <div class="modal-body">
+                    <center>
+                        <nav class="cl-effect-5">
+                            <a href="#" data-dismiss="modal" class="btn btn-primary yes"><span data-hover="Підтвердити">Підтвердити</span></a>
+                            <a href="#" data-dismiss="modal" class="btn btn-primary no"><span data-hover="Скасувати">Скасувати</span></a>
+                        </nav>
+                    </center>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div id="add-child" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Додати дитину</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="firstname" placeholder="Ім'я" />
+                    <input type="text" id="lastname" placeholder="Прізвище" />
+                    <textarea id="description" placeholder="Опис"></textarea>
+                    <label>Дата народження</label>
+                    <input type="date" id="birth"/>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-sub" data-dismiss="modal">Додати</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer id="footer" role="contentinfo">
+        <div class="container">
+            <div class="row row-bottom-padded-sm">
+                <div class="col-md-12">
+                    <p class="copyright text-center">&copy; KMA 2017<br> Children web-project by <a href="#" target="_blank">Natalia, Julia, Oleksii</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="<c:url value='/static/js/jquery.min.js'/>"></script>
+    <script src="<c:url value='/static/js/jquery.easing.1.3.js'/>"></script>
+    <script src="<c:url value='/static/js/bootstrap.min.js'/>"></script>
+    <script src="<c:url value='/static/js/jquery.waypoints.min.js'/>"></script>
+    <script src="<c:url value='/static/js/owl.carousel.min.js'/>"></script>
+    <script src="<c:url value='/static/js/jquery.style.switcher.js'/>"></script>
+    <script src="<c:url value='/static/js/main.js'/>"></script>
+    <script src="<c:url value='/static/js/nlform.js'/>"></script>
+    <script src="<c:url value='/static/js/cbpFWTabs.js'/>"></script>
+    <script>
+        (function() {
+
+            [].slice.call(document.querySelectorAll('.tabs')).forEach(function(el) {
+                new CBPFWTabs(el);
+            });
+
+        })();
+    </script>
+
+</body>
+</html>

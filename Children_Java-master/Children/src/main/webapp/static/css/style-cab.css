@@ -1,0 +1,271 @@
+.tabs {
+    margin-top: 100px;
+}
+
+body{
+    background: #f4f4f4;
+}
+
+.back-house{
+    position: absolute;
+    opacity: 0.5;
+    width: 100%;
+    left: 0;
+}
+
+.tabs nav {
+    border-bottom: 2px dashed #eee;
+}
+
+.icon span {
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-size: 20px !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.house-img {
+    background: url(https://s00.yaplakal.com/pics/userpic/2/7/6/av-677672.jpg);
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.user-img {
+    background: url(https://s00.yaplakal.com/pics/userpic/2/7/6/av-677672.jpg);
+    width: 400px;
+    height: 400px;
+    margin-top: 40px;
+    border-radius: 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.subtext{
+    font-size: 14px;
+    width: 80%;
+    margin-top: 20px;
+    margin-left: 10%;
+    margin-bottom: 20px;
+}
+
+.modal-content{
+    width: 100%;
+}
+
+.modal-body{
+    width: 100%;
+}
+
+.btn-primary i{
+    margin-right: 10px;
+}
+
+.add-child-btn{
+    margin-top: 30px;
+}
+
+input, textarea{
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#fh5co-press{
+    padding-top: 0;
+}
+
+.fh5co-press-item{
+    text-align: left;
+    height: 250px;
+}
+
+.fh5co-press-item p{
+    font-family: "Roboto Condensed", sans-serif !important;
+    font-weight: 300 !important;
+    font-size: 16px !important;
+    line-height: 1.8 !important;
+    color: #888 !important;
+    margin-top: -20px !important;
+    margin-bottom: 10px !important;
+}
+
+label {
+    font-family: "Roboto Condensed", sans-serif !important;
+    font-size: 12px !important;
+    font-size: 1em;
+	display: block;
+    margin-bottom: -5px;
+    margin-top: 5px;
+	padding: 10px 0 0 10px;
+	color: #666666;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+
+.halo{
+    margin-top: 20px;
+    width: 400px;
+    border-radius: 50%;
+    height: 100px;
+    border: 10px solid #FFF238;
+    opacity: 0.5;
+    position: absolute;
+    z-index: -3;
+    filter: blur(1px);
+}
+
+.gift-info h2{
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 16px !important;
+    color: #888 !important;
+    margin-top: -10px !important;
+    margin-bottom: 40px !important;
+}
+
+.gift-info p {
+    margin-bottom: 10px !important;
+    margin-top: -40px !important;
+}
+
+#cancel .modal-body{
+    text-align:center;
+}
+
+#cancel .modal-body p{
+    margin-top: 20px;
+}
+
+#cancel .cl-effect-5 a, #accept .cl-effect-5 a{
+    padding: 15px 30px;
+}
+
+#accept .cl-effect-5 a{
+    margin-bottom: 20px;
+}
+
+
+#cancel .cl-effect-5 span, #accept .cl-effect-5 span{
+    margin-top: -10px;
+}
+
+#cancel .cl-effect-5 a span::before, #accept .cl-effect-5 a span::before {
+	position: absolute;
+	top: 200%;
+    text-align: center;
+    left: 0%;
+	content: attr(data-hover);
+	font-weight: 700;
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+#cancel .cl-effect-5 .yes, #accept .cl-effect-5 .yes{
+    background-color: #96CA2D;
+}
+
+#cancel .cl-effect-5 .no, #accept .cl-effect-5 .no{
+    background-color: #d76b60;
+}
+
+.social {
+    margin-left: -3% !important;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.social .link {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px dashed #ccc;
+  background-clip: content-box;
+  padding: 10px;
+  transition: .5s;
+  color: #D7D0BE;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 40px;
+    margin-top: 130px;
+}
+
+.social .link span {
+  display: block;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.social .link:hover {
+  padding: 20px;
+  color: white;
+  margin-left: -5px;
+  transform: translateX(10px) rotate(360deg);
+}
+
+.social .link.google-plus {
+  background-color: tomato;
+  color: white;
+}
+
+.social .link.twitter {
+  background-color: #00ACEE;
+  color: white;
+}
+
+.social .link.facebook {
+  background-color: #3B5998;
+  color: white;
+}
+
+.share p{
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    color: #888 !important;
+}
+
+.share{
+    height: 180px;
+}
+
+.cl-effect-5 a span::before {
+	position: absolute;
+	top: 200%;
+    text-align: center;
+    left: 0%;
+	content: attr(data-hover);
+	font-weight: 700;
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+#edit-info-house .btn{
+    color: #999;
+    border: 2px solid #ebebeb;
+    border-radius: 15px;
+    float: right;
+}
+
+
