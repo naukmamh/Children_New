@@ -65,6 +65,13 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <center>
+                        <button class="btn btn-primary edit-btn hvr-grow" data-toggle="modal" data-target="#edit-child"><i class="fa fa-edit"></i><span>Редагувати</span></button>
+                    </center>
+                    <center>
+                        <button class="add-child-btn btn btn-primary hvr-grow" data-toggle="modal" data-target="#add-gift"><i class="fa fa-plus"></i><span>Додати бажання</span></button>
+                    </center>
                 </div>
             </div>
         </div>
@@ -161,6 +168,54 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Скасувати</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    
+    <div id="edit-child" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Редагувати інформацію про дитину</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="firstname" placeholder="Ім'я" />
+                    <input type="text" id="lastname" placeholder="Прізвище" />
+                    <textarea id="description" placeholder="Опис"></textarea>
+                    <input type="text" id="photo" placeholder="URL фото" />
+                    <label>Дата народження</label>
+                    <input type="date" id="birth" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-sub" data-dismiss="modal">Зберегти</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="add-gift" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Додати бажання</h4>
+                </div>
+                <div class="modal-body">
+                    <select>
+                        <option value="" disabled selected>Оберіть категорію бажання</option>
+                        <option value="cloth">Одяг</option>
+                        <option value="toys">Іграшки</option>
+                        <option value="yummy">Смаколики</option>
+                    </select>
+                    <div class="sr"><input type="checkbox" class="srochno" /><label>Терміново потрібно</label></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-sub" data-dismiss="modal">Додати</button>
                 </div>
             </div>
 

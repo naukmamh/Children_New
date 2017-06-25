@@ -68,7 +68,7 @@
                                 <div class="share">
                                     <p>Розкажи про свої подарунки друзям!</p>
                                     <div class="social">
-                                        <a href="https://facebook.com/ondrej.p.barta" class="link facebook" target="_parent"><span class="fa fa-facebook-square"></span></a>
+                                        <a class="link facebook"><span class="fa fa-facebook-square"></span></a>
                                     </div>
                                 </div>
                                 <button style="margin-top: 20px" class="btn btn-primary hvr-grow to-animate" data-toggle="modal" data-target="#edit-info-house">Редагувати</button>
@@ -162,7 +162,7 @@
 
         </div>
     </div>
-    
+
     <div id="edit-user" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -171,7 +171,7 @@
                     <h4 class="modal-title">Редагувати інформацію</h4>
                 </div>
                 <div class="modal-body">
-                     <input type="text" id="pass" placeholder="Новий пароль" />
+                    <input type="text" id="pass" placeholder="Новий пароль" />
                     <input type="text" id="av" placeholder="URL аватарки" />
                 </div>
                 <div class="modal-footer">
@@ -197,10 +197,33 @@
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.style.switcher.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/nlform.js"></script>
     <script src="js/cbpFWTabs.js"></script>
     <script>
+        $(document).ready(function() {
+            $.ajaxSetup({
+                cache: true
+            });
+            $.getScript('//connect.facebook.net/en_US/sdk.js', function() {
+                FB.init({
+                    appId: '796463480514850',
+                    version: 'v2.7' // or v2.1, v2.2, v2.3, ...
+                });
+                $('#loginbutton,#feedbutton').removeAttr('disabled');
+                FB.getLoginStatus(updateStatusCallback);
+            });
+
+            $(".facebook").click(function() {
+                FB.ui({
+  method: 'share',
+  href: 'https://developers.facebook.com/docs/'
+                }, function(response) {
+                    // Debug response (optional)
+                    console.log(response);
+                });
+            });
+        });
+
         (function() {
 
             [].slice.call(document.querySelectorAll('.tabs')).forEach(function(el) {
