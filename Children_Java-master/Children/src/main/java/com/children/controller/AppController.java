@@ -118,10 +118,10 @@ public class AppController {
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginPage(Model m) {
 		if (isCurrentAuthenticationAnonymous()) {
-			m.addAttribute("house",new House());
+			m.addAttribute("user",new User());
 			return "login";
 	    } else {
-	    	return "";  
+	    	return "login";  
 	    }
 	}
    

@@ -9,7 +9,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Увійти до системи</title>
- <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Yanone+Kaffeesatz" rel="stylesheet" type='text/css'>
+<link
+	href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Yanone+Kaffeesatz"
+	rel="stylesheet" type='text/css'>
 <link rel="stylesheet" type="text/css"
 	href="<c:url value='/static/css/componentlogin.css'/>" />
 <link rel="stylesheet" type="text/css"
@@ -47,7 +49,7 @@
 		</nav>
 	</div>
 	</header>
-	 <img class="babyback" src="<c:url value='/static/images/back.png'/>"/>
+	<img class="babyback" src="<c:url value='/static/images/back.png'/>" />
 	<div class="containerr">
 		<section>
 		<p class="title">
@@ -62,10 +64,42 @@
 						<div class="content-style-form content-style-form-1">
 							<span class="icon icon-close">Close the dialog</span>
 							<h2>Login</h2>
-							<form><p><label>Email</label><input type="text" /></p>
-                                    <p><label>Password</label><input type="password" /></p>
-                                    <p><button>Login</button></p>
-                                    </form>
+							<c:url var="loginUrl" value="/login" />
+
+							<form action="${loginUrl}" method="post" class="sign-up">
+								<p>
+									<c:if test="${param.error != null}">
+										<div class="alert alert-danger">
+											<p>Invalid username and password.</p>
+										</div>
+									</c:if>
+									<c:if test="${param.logout != null}">
+										<div class="alert alert-success">
+											<p>You have been logged out successfully.</p>
+										</div>
+									</c:if>
+								</p>
+								<p>
+									<label>Логін</label><input id="username" name="ssoId"
+										type="text" />
+								</p>
+								<p>
+									<label>Пароль</label><input type="password" id="password"
+										name="password" />
+								</p>
+								<div class="input-group input-sm">
+									<div class="checkbox">
+										<label><input type="checkbox" id="rememberme"
+											name="remember-me"> Запам'ятати мене</label>
+									</div>
+								</div>
+								<input type="hidden" name="${_csrf.parameterName}"
+									value="${_csrf.token}" />
+
+								<div class="form-actions">
+									<input type="submit" class="sign-up-button" value="Увійти">
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -79,19 +113,41 @@
 						<div class="content-style-form content-style-form-2">
 							<span class="icon icon-close">&times;</span>
 							<h2>Sign Up</h2>
-							<springForm:form method="POST" modelAttribute="user" action="userreg">
-								 <p><label>Ім'я</label><springForm:input path="firstName" type="text" /><springForm:errors path="firstName" cssClass="error" /></p>
-                                    <%-- <p><label>Password</label><springForm:input  path="password" type="password" /></p> --%>
-                                    <p><label>Прізвище</label><springForm:input  path="lastName" type="text" /><springForm:errors path="lastName" cssClass="error" /></p>
-                                    <p><label>E-mail</label><springForm:input  path="email" type="text" /><springForm:errors path="email" cssClass="error" /></p>
-                                     
-                                     <p><label>Логін</label><springForm:input path="ssoId" type="text" /><springForm:errors path="ssoId" cssClass="error" /></p>
-                                      <p><label>Пароль</label><springForm:input path="password" type="password" /></p>
-                                       
-                                    <p><input class="btn-submit" type="submit" value="Register"></p>
+							<springForm:form method="POST" modelAttribute="user"
+								action="userreg">
+								<p>
+									<label>Ім'я</label>
+									<springForm:input path="firstName" type="text" />
+									<springForm:errors path="firstName" cssClass="error" />
+								</p>
+								<%-- <p><label>Password</label><springForm:input  path="password" type="password" /></p> --%>
+								<p>
+									<label>Прізвище</label>
+									<springForm:input path="lastName" type="text" />
+									<springForm:errors path="lastName" cssClass="error" />
+								</p>
+								<p>
+									<label>E-mail</label>
+									<springForm:input path="email" type="text" />
+									<springForm:errors path="email" cssClass="error" />
+								</p>
+
+								<p>
+									<label>Логін</label>
+									<springForm:input path="ssoId" type="text" />
+									<springForm:errors path="ssoId" cssClass="error" />
+								</p>
+								<p>
+									<label>Пароль</label>
+									<springForm:input path="password" type="password" />
+								</p>
+
+								<p>
+									<input class="btn-submit" type="submit" value="Register">
+								</p>
 							</springForm:form>
-							
-						
+
+
 						</div>
 					</div>
 				</div>
