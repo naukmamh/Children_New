@@ -86,7 +86,7 @@
                                             <p><strong>Адреса: </strong>${r.city}, ${r.street},  ${r.number } </p>
                                             <p style="margin-top: -40px !important"><strong>Адреса для звернення: </strong>${r.email }</p>
                                             <p>${r.description } </p>
-                                            <a href="#" class="btn btn-primary btn-sm">Зареєструвати</a>
+                                            <a href="/Children/register/${r.id}" class="btn btn-primary btn-sm">Зареєструвати</a>
                                         </div>
 
                                     </div>
