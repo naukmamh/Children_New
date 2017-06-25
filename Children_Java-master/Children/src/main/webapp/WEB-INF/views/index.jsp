@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="<c:url value='/static/css/hover.css'/>">
 
     <link rel="stylesheet" href="<c:url value='/static/css/style.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/usertab.css'/>">
 
 </head>
 
@@ -42,6 +43,17 @@ window.fbAsyncInit = function() {
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
+ <div class="usertab">
+        <div class="img-border"></div>
+        <div class="userpic"></div>
+        <center>
+        <div class="gifts-info"><div class="centered"><i class="fa fa-gift"></i><span>&nbsp;&nbsp;&nbsp;200 подарунків</span></div></div>
+            </center>
+        <ul class="btns">
+        <li><a>Кабінет</a></li>
+        <li><a>Вийти</a></li>
+        </ul>
+    </div>
     <header role="banner" id="fh5co-header">
         <div class="container">
             <nav class="navbar navbar-default">
@@ -336,6 +348,7 @@ window.fbAsyncInit = function() {
     <script src="<c:url value='/static/js/jquery.waypoints.min.js'/>"></script>
     <script src="<c:url value='/static/js/owl.carousel.min.js'/>"></script>
     <script src="<c:url value='/static/js/jquery.style.switcher.js'/>"></script>
+    <script src="<c:url value='/static/js/usertab.js'/>"></script>
     <script src="<c:url value='/static/js/main.js'/>"></script>
 
 </body>
