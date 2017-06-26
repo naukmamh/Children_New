@@ -31,7 +31,7 @@ public class Present {
 	private String parcelNumber;
 
 
-	@Column 
+	@Column
 	private int wishId;
 	
 	@Column 
