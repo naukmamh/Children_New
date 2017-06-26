@@ -1,6 +1,9 @@
 package com.children.controller;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
+import java.util.Set;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
@@ -15,6 +18,7 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,10 +26,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.children.model.House;
 import com.children.model.HouseRequest;
+import com.children.model.User;
+import com.children.model.UserProfile;
+import com.children.model.WishCategory;
 import com.children.service.HouseRequestService;
 import com.children.service.HouseService;
 import com.children.service.UserProfileService;
 import com.children.service.UserService;
+import com.children.service.WishCategoryService;
 @Controller
 public class AdminCabinetController {
 	@Autowired
@@ -39,6 +47,9 @@ public class AdminCabinetController {
 	
 	@Autowired
 	HouseService houseService;
+	
+	@Autowired
+	WishCategoryService wishCategoryService;
 
 	@Autowired
 	MessageSource messageSource;
@@ -55,6 +66,8 @@ public class AdminCabinetController {
 	public String getMainPage(ModelMap model) {
 		model.addAttribute("loggedinuser", getPrincipal());
 		model.addAttribute("requests", houseRequestService.findAllHouseRequests());
+		model.addAttribute("categories", wishCategoryService.findAllWishCategories());
+		model.addAttribute("category", new WishCategory());
 		List<House> houses = houseService.findAllHouses();
 		for(House h: houses){
 			h.setNumberOfChildren(houseService.getNumberOfChildren(h.getId()));
@@ -66,7 +79,7 @@ public class AdminCabinetController {
 	@Transactional
 	@RequestMapping(value = { "/register/{requestId}" }, method = RequestMethod.GET)
 	public String registerHouse(@PathVariable int requestId, ModelMap model) {
-		System.out.println("____________-reg");
+		
 		model.addAttribute("loggedinuser", getPrincipal());
 		houseRequestService.registerHouse(requestId);
 	
@@ -80,6 +93,24 @@ public class AdminCabinetController {
 		model.addAttribute("loggedinuser", getPrincipal());
 		houseService.deleteHouse(houseId);
 	
+		return "redirect:/admin";
+	}
+	
+	@Transactional
+	@RequestMapping(value = { "/newcategory" }, method = RequestMethod.POST)
+	public String saveUser(@Valid WishCategory category, BindingResult result, ModelMap model) {
+		
+		if (result.hasErrors()) {
+			System.out.println(result.getAllErrors().toString());
+			return "redirect:/admin";
+		}
+
+		
+		wishCategoryService.saveWishCategory(category);
+
+		model.addAttribute("loggedinuser", getPrincipal());
+
+		// return "success";
 		return "redirect:/admin";
 	}
 
