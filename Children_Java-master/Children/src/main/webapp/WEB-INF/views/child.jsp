@@ -223,10 +223,11 @@
                         <input name="name" type="text" id="title-wish" placeholder="Назва" />
                         <textarea name="description" id="desc-wish" placeholder="Опис"></textarea>
                         <select name="categoryWish">
+                        	<c:forEach items="${categories}" var="c">
 	                        <option value="" disabled selected>Оберіть категорію бажання</option>
-	                        <option value="Animal">Тваринка</option>
-	                        <option value="Food">Їжа</option>
-	                        <option value="yummy">Смаколики</option>
+	                        <option value="${c.name }">${c.name }</option>
+	                        
+	                        </c:forEach>
                     	</select>
                     	<input style="display:none" name="childId" value="${child.id}">
                         <div class="sr"><input type="checkbox" class="srochno" /><label>Терміново потрібно</label></div>
