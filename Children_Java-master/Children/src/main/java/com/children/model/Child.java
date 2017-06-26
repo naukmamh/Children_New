@@ -63,7 +63,7 @@ public class Child implements Serializable {
 	@JoinColumn(name = "house_id")
 	private House house;
 	
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "child", cascade = CascadeType.REMOVE)
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "child", cascade = CascadeType.REMOVE)
 	private Set<Wish> wishes; 
 	
 	public int getId() {
