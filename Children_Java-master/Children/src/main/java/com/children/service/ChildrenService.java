@@ -25,4 +25,8 @@ public interface ChildrenService {
 	int getAge(Child child);
 	
 	List<List<Wish>> formatCarouselWishes(Set<Wish> childWishes);
+	
+	List<Child> getAllChildrenByPage(int firstOnPage, int countOnPage);
+	
+	int getPagesCount(int firstOnPage, int countOnPage);
 }
