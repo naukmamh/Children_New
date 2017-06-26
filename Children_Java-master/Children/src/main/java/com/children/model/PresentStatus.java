@@ -14,7 +14,15 @@ public class PresentStatus {
 	private int id;
 	
 	@Column
-	private String statusCode;
+	PresentStatusType status;
+	
+	public PresentStatusType getStatus() {
+		return status;
+	}
+
+	public void setStatus(PresentStatusType status) {
+		this.status = status;
+	}
 
 	public int getId() {
 		return id;
@@ -24,12 +32,5 @@ public class PresentStatus {
 		this.id = id;
 	}
 
-	public String getStatusCode() {
-		return statusCode;
-	}
-
-	public void setStatusCode(String statusCode) {
-		this.statusCode = statusCode;
-	}
 	
 }
