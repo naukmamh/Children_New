@@ -45,8 +45,8 @@
             <nav>
                 <ul>
                     <li></li>
-                    <li><a href="#section-linemove-1" class="icon fa fa-user"><span>Акаунт</span></a></li>
-                    <li><a href="#section-linemove-2" class="icon fa fa-gift"><span>Мої подарунки</span></a></li>
+                    <li><a href="#section-linemove-2" class="icon fa fa-user"><span>Акаунт</span></a></li>
+                    <li><a href="#section-linemove-3" class="icon fa fa-gift"><span>Мої подарунки</span></a></li>
                     <li></li>
                 </ul>
             </nav>
@@ -71,7 +71,7 @@
                                         <a class="link facebook"><span class="fa fa-facebook-square"></span></a>
                                     </div>
                                 </div>
-                                <button style="margin-top: 20px" class="btn btn-primary hvr-grow to-animate" data-toggle="modal" data-target="#edit-info-house">Редагувати</button>
+                                <button style="margin-top: 20px" class="btn btn-primary hvr-grow to-animate" data-toggle="modal" data-target="#edit-user">Редагувати</button>
                             </div>
                         </div>
                     </div>
@@ -136,6 +136,7 @@
                         </div>
                     </div>
                 </section>
+                <section id="section-linemove-4">
             </div>
         </div>
     </section>
@@ -200,28 +201,6 @@
     <script src="js/nlform.js"></script>
     <script src="js/cbpFWTabs.js"></script>
     <script>
-        $(document).ready(function() {
-            $.ajaxSetup({
-                cache: true
-            });
-            $.getScript('//connect.facebook.net/en_US/sdk.js', function() {
-                FB.init({
-                    appId: '796463480514850',
-                    xfbml: true,
-                    version: 'v2.7' // or v2.1, v2.2, v2.3, ...
-                });
-
-            $(".facebook").click(function() {
-                FB.ui({
-  method: 'share',
-  href: 'https://developers.facebook.com/docs/'
-                }, function(response) {
-                    // Debug response (optional)
-                    console.log(response);
-                });
-            });
-        });
-
         (function() {
 
             [].slice.call(document.querySelectorAll('.tabs')).forEach(function(el) {

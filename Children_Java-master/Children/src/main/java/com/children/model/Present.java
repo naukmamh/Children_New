@@ -26,12 +26,72 @@ public class Present {
 	
 	@Column
 	private Date dateReceived;
+	
+	@Column
+	private String parcelNumber;
 
+
+	@Column 
+	private int wishId;
+	
+	@Column 
+	private int presentStatusId;
+	
 	@Column
 	private String letter;
+	
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id")
 	private User user;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Date getDateOpened() {
+		return dateOpened;
+	}
+	public void setDateOpened(Date dateOpened) {
+		this.dateOpened = dateOpened;
+	}
+	public Date getDateReceived() {
+		return dateReceived;
+	}
+	public void setDateReceived(Date dateReceived) {
+		this.dateReceived = dateReceived;
+	}
+	public String getParcelNumber() {
+		return parcelNumber;
+	}
+	public void setParcelNumber(String parcelNumber) {
+		this.parcelNumber = parcelNumber;
+	}
+	public int getWishId() {
+		return wishId;
+	}
+	public void setWishId(int wishId) {
+		this.wishId = wishId;
+	}
+	public String getLetter() {
+		return letter;
+	}
+	public void setLetter(String letter) {
+		this.letter = letter;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+	public int getPresentStatusId() {
+		return presentStatusId;
+	}
+	public void setPresentStatusId(int presentStatusId) {
+		this.presentStatusId = presentStatusId;
+	}
 	
 	
 	
