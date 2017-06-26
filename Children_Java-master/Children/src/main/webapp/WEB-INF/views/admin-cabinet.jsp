@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
  <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib uri="http://www.springframework.org/tags/form"
+	prefix="form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -76,7 +77,7 @@
                         <div class="container">
                             <div class="row">
                             
-                            <c:forEach items="${request}" var="r">
+                            <c:forEach items="${requests}" var="r">
                                 <div class="col-md-6">
                                     <div class="fh5co-press-item to-animate">
                                         <div class="fh5co-press-img" style="background-image: url(http://www.mcgough.com/wp-content/uploads/2013/09/ChildHomeExt1_L.jpg)">
@@ -123,33 +124,24 @@
                     <div id="fh5co-press" data-section="press">
                         <div class="container">
                             <div class="row">
+                            <c:forEach items="${houses}" var="h">
                                 <div class="col-md-6">
                                     <div class="fh5co-press-item to-animate">
                                         <div class="fh5co-press-img" style="background-image: url(http://www.mcgough.com/wp-content/uploads/2013/09/ChildHomeExt1_L.jpg)">
                                         </div>
                                         <div class="fh5co-press-text">
-                                            <h3 class="h2 fh5co-press-title">Дитбудинок "Сонечко"<span class="fh5co-border"></span></h3>
-                                            <h2 class="fh5co-press-title years">120 дітей</h2>
-                                            <p class="address" style="margin-top: -45px !important; font-weight: 400 !important">Київ, вул. Сонячна, 20</p>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis accumsan tortor. </p>
-                                            <a href="#" class="btn btn-primary btn-sm">Видалити будинок</a>
+                                            <h3 class="h2 fh5co-press-title">${h.name }<span class="fh5co-border"></span></h3>
+                                            <h2 class="fh5co-press-title years">${h.numberOfChildren } дітей</h2>
+                                            <p class="address" style="margin-top: -45px !important; font-weight: 400 !important">${h.city }, ${h.street }, ${h.number }</p>
+                                            <p> ${h.description } </p>
+                                            <a href="/Children/delete/${h.id}" class="btn btn-primary btn-sm">Видалити будинок</a>
                                         </div>
 
                                     </div>
                                 </div>
+                                </c:forEach>
 
-                                <div class="col-md-6">
-                                    <div class="fh5co-press-item to-animate">
-                                        <div class="fh5co-press-img" style="background-image: url(https://www.barnardos.org.uk/how-to-adopt-a-child-in-scotland-top-banner.jpg)">
-                                        </div>
-                                        <div class="fh5co-press-text">
-                                            <h3 class="h2 fh5co-press-title">Катя <span class="fh5co-border"></span></h3>
-                                            <h2 class="fh5co-press-title years">10 років</h2>
-                                            <p>Любить малювати</p>
-                                            <a href="#" class="btn btn-primary btn-sm">Дізнатися більше</a>
-                                        </div>
-                                    </div>
-                                </div>
+                               
                             </div>
                             <center>
 
@@ -181,30 +173,21 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-6">
+                                <c:forEach items="${categories}" var="c">
                                     <div class="fh5co-press-item to-animate">
-                                        <div class="fh5co-press-img" style="background-image: url(http://www.mcgough.com/wp-content/uploads/2013/09/ChildHomeExt1_L.jpg)">
+                                        <div class="fh5co-press-img" style="background-image: url(${c.pictureUrl})">
                                         </div>
                                         <div class="fh5co-press-text">
-                                            <h3 class="h2 fh5co-press-title">Одяг<span class="fh5co-border"></span></h3>
+                                            <h3 class="h2 fh5co-press-title">${c.name }<span class="fh5co-border"></span></h3>
                                            <a href="#" data-toggle="modal" data-target="#edit-category" class="btn btn-primary btn-sm">Редагувати</a>
                                             <a href="#" data-toggle="modal" data-target="#delete-category" class="btn btn-primary btn-sm">Видалити</a>
                                         </div>
 
                                     </div>
+                                    </c:forEach>
                                 </div>
 
-                                <div class="col-md-6">
-                                    <div class="fh5co-press-item to-animate">
-                                        <div class="fh5co-press-img" style="background-image: url(https://www.barnardos.org.uk/how-to-adopt-a-child-in-scotland-top-banner.jpg)">
-                                        </div>
-                                        <div class="fh5co-press-text">
-                                            <h3 class="h2 fh5co-press-title">Катя <span class="fh5co-border"></span></h3>
-                                            <h2 class="fh5co-press-title years">10 років</h2>
-                                            <p>Любить малювати</p>
-                                            <a href="#" class="btn btn-primary btn-sm">Дізнатися більше</a>
-                                        </div>
-                                    </div>
-                                </div>
+                               
                             </div>
                             <center>
 
@@ -349,13 +332,16 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Додати категорію</h4>
                 </div>
+                <form:form method="POST" modelAttribute="category"
+								action="newcategory">
                 <div class="modal-body">
-                    <input type="text" id="title" placeholder="Назва" />
-                    <input type="text" id="photo" placeholder="URL фото" />
+                    <form:input path="name" type="text" id="title" placeholder="Назва" />
+                    <form:input path="pictureUrl" type="text" id="photo" placeholder="URL фото" />
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn-sub" data-dismiss="modal">Додати</button>
+                    <input class="btn-submit" type="submit" value="Додати">
                 </div>
+                </form:form>
             </div>
 
         </div>

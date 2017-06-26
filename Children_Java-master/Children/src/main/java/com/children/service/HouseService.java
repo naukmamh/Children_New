@@ -17,4 +17,6 @@ public interface HouseService {
 	List<House> findAllHouses();
 
 	List<House> findAllHouses(String city);
+	
+	int getNumberOfChildren(int id);
 }

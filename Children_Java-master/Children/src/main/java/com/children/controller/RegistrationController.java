@@ -54,8 +54,8 @@ public class RegistrationController {
 
 	@RequestMapping(value = { "/userreg" }, method = RequestMethod.POST)
 	public String saveUser(@Valid User user, BindingResult result, ModelMap model) {
-System.out.println("____________-reg");		
-if (result.hasErrors()) {
+		
+		if (result.hasErrors()) {
 			System.out.println(result.getAllErrors().toString());
 			return "login";
 		}
@@ -66,7 +66,7 @@ if (result.hasErrors()) {
 			result.addError(ssoError);
 			return "success";
 		}
-		Set<UserProfile> userProfiles = new HashSet<UserProfile>(); 
+		Set<UserProfile> userProfiles = new HashSet<UserProfile>();
 		userProfiles.add(userProfileService.findById(1));
 		user.setUserProfiles(userProfiles);
 		userService.saveUser(user);
@@ -76,12 +76,13 @@ if (result.hasErrors()) {
 		// return "success";
 		return "children";
 	}
-	private String getPrincipal(){
+
+	private String getPrincipal() {
 		String userName = null;
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
 		if (principal instanceof UserDetails) {
-			userName = ((UserDetails)principal).getUsername();
+			userName = ((UserDetails) principal).getUsername();
 		} else {
 			userName = principal.toString();
 		}
@@ -89,11 +90,12 @@ if (result.hasErrors()) {
 	}
 
 	/**
-	 * This method returns true if users is already authenticated [logged-in], else false.
+	 * This method returns true if users is already authenticated [logged-in],
+	 * else false.
 	 */
 	private boolean isCurrentAuthenticationAnonymous() {
-	    final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-	    return authenticationTrustResolver.isAnonymous(authentication);
+		final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		return authenticationTrustResolver.isAnonymous(authentication);
 	}
 }
 // @Transactional
