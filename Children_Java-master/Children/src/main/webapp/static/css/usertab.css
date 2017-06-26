@@ -1,0 +1,113 @@
+#user-nav i{
+    font-size: 30px;
+    margin-top: -5px;
+    margin-bottom: -90px;
+}
+
+.usertab{
+    position: fixed;
+    width: 250px;
+    background-color: #b39edc;
+    height: 100%;
+    right: -250px;
+    top:0;
+    border-left: 2px dashed #fefefe;
+    z-index: 10000;
+    padding: 30px 50px;
+}
+
+.usertab .userpic{
+    background: url(https://m.popkey.co/527299/MwREL.gif);
+    width: 150px;
+    height: 150px;
+    -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+
+     background-repeat: no-repeat;
+     background-position: center center;
+    border-radius: 50%;
+}
+
+.usertab #halo{
+    height: 30px;
+    position: absolute;
+    width: 150px;
+    border: 5px solid #fef782;
+    border-radius: 50%;
+    margin-top: -10px;
+}
+
+.usertab .img-border{
+    background: white;
+    z-index: -10;
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    opacity: 0.3;
+    margin-left: -10px;
+    margin-top: -10px;
+    border-radius: 50%;
+}
+
+.usertab .gifts-info{
+    background: rgba(0,0,0,0.1);
+    width: 100%;
+    margin-left: -50px;
+    position: absolute;
+    margin-top: 30px;
+    padding: 10px 0px;
+    padding-top: 5px;
+    color: white;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-size: 20px;
+    display:table;
+}
+
+.usertab .gifts-info i{
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    font-size: 35px;
+    margin-left: -100px;
+}
+
+.usertab .gifts-info span{
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+}
+
+.usertab .btns{
+    text-align: center;
+    width: 250px;
+    margin-left: -50px;
+    margin-top: 100px;
+    list-style: none;
+}
+
+.usertab .btns li{
+    text-align: center;
+    width: 250px;
+    margin-left: -40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.usertab .btns li:first-child{
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.usertab .btns a{
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 400;
+}
+
+.usertab .btns a:hover{
+    text-decoration: none;
+}

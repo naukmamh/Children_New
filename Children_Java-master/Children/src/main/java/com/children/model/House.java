@@ -48,8 +48,18 @@ public class House implements Serializable{
 	@NotEmpty
 	@Column
 	private String description;
-
 	
+	private int numberOfChildren;
+	
+	
+	public int getNumberOfChildren() {
+		return numberOfChildren;
+	}
+	
+	public void setNumberOfChildren(int numberOfChildren) {
+		this.numberOfChildren = numberOfChildren;
+	}
+
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "house", cascade = CascadeType.REMOVE)
 	private Set<Child> children; 
 	

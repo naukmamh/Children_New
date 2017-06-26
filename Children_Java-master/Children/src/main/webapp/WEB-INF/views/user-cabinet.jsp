@@ -23,9 +23,40 @@
     <link rel="stylesheet" href="<c:url value='/static/css/style-child.css'/>">
     <link rel="stylesheet" href="<c:url value='/static/css/style-cab.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/static/css/tabsuser.css'/>" />
+    <link rel="stylesheet" href="<c:url value='/static/css/usertab.css'/>">
 
 </head>
 <body>
+<script type="text/javascript">
+window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '796463480514850',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();   
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+ <div class="usertab">
+        <div class="img-border"></div>
+        <div class="userpic"></div>
+        <center>
+        <div class="gifts-info"><div class="centered"><i class="fa fa-gift"></i><span>&nbsp;&nbsp;&nbsp;200 подарунків</span></div></div>
+            </center>
+        <ul class="btns">
+        <li><a>Кабінет</a></li>
+        <li><a>Вийти</a></li>
+        </ul>
+    </div>
     <header role="banner" id="fh5co-header">
         <div class="container">
             <nav class="navbar navbar-default">
@@ -37,6 +68,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#"><span>Головна</span></a></li>
                         <li><a href="#" class="login-btn hvr-reveal"><span>Увійти</span></a></li>
+                        <li><a id="user-nav"><i class="fa fa-user-circle-o"></i></a></li>
                     </ul>
                 </div>
             </nav>
@@ -199,10 +231,18 @@
     <script src="<c:url value='/static/js/jquery.waypoints.min.js'/>"></script>
     <script src="<c:url value='/static/js/owl.carousel.min.js'/>"></script>
     <script src="<c:url value='/static/js/jquery.style.switcher.js'/>"></script>
-    <script src="<c:url value='/static/js/main.js'/>"></script>
     <script src="<c:url value='/static/js/nlform.js'/>"></script>
     <script src="<c:url value='/static/js/cbpFWTabs.js'/>"></script>
+    <script src="<c:url value='/static/js/usertab.js'/>"></script>
     <script>
+    $(document).ready(function() {
+        $(".facebook").click(function() {
+            FB.ui({method: 'share', href: 'https://developers.facebook.com/docs/'
+            }, function(response) {
+                console.log(response);
+            });
+        });
+    });
         (function() {
 
             [].slice.call(document.querySelectorAll('.tabs')).forEach(function(el) {

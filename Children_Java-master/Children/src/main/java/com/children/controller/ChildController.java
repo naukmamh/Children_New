@@ -24,6 +24,7 @@ import com.children.service.ChildrenService;
 import com.children.service.HouseService;
 import com.children.service.UserProfileService;
 import com.children.service.UserService;
+import com.children.service.WishCategoryService;
 
 @Controller
 @SessionAttributes("roles")
@@ -41,18 +42,22 @@ public class ChildController {
 	ChildrenService childrenService;
 	
 	@Autowired
+	WishCategoryService wishCategoryService;
+	
+	@Autowired
 	HouseService houseService;
 
 	@Transactional
 	@RequestMapping(value = { "/all" }, method = RequestMethod.GET)
-	public String listChildren(ModelMap model, @RequestParam Map<String,String> filters) {
+	public String listChildren(ModelMap model, @RequestParam Map<String,String> filters, @RequestParam(name="page", required=false, defaultValue="1") int page) {
 	List<Child> children;
 	if(filters.size()>0){
 		filters.values().removeAll(Collections.singleton(""));
 		children = childrenService.findAllChildrenWithFilters(filters);
 	} else{
-		children = childrenService.findAllChildren();
+		children = childrenService.getAllChildrenByPage(page,10);
 	}
+	model.addAttribute("totalPages", childrenService.getPagesCount(page,5));
 		model.addAttribute("children", children);
 		model.addAttribute("loggedinuser", getPrincipal());
 		
@@ -65,6 +70,8 @@ public class ChildController {
 //		model.addAttribute("children", res);
 		return "children";
 	}
+	
+	
 
 @Transactional
 @RequestMapping(value = { "/child" }, method = RequestMethod.GET)
@@ -73,6 +80,7 @@ public String oneChildren(ModelMap model, @RequestParam("id") int id) {
 	model.addAttribute("child", child);
 	model.addAttribute("age", childrenService.getAge(child));
 	model.addAttribute("wishes",childrenService.formatCarouselWishes(child.getWishes()));
+	model.addAttribute("categories", wishCategoryService.findAllWishCategories());
 	model.addAttribute("loggedinuser", getPrincipal());
 	return "child";
 }

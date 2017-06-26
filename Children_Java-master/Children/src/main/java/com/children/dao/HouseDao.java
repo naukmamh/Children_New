@@ -15,4 +15,6 @@ public interface HouseDao {
 	List<House> findAllHouses();
 
 	List<House> findAllHousesByCity(String city);
+	
+	int getNumberOfChildren(int id);
 }

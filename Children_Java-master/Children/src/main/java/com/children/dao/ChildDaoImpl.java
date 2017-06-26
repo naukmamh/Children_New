@@ -6,6 +6,7 @@ import java.util.Map;
 import org.hibernate.Criteria;
 import org.hibernate.Hibernate;
 import org.hibernate.Query;
+import org.hibernate.ScrollableResults;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Expression;
@@ -55,6 +56,33 @@ public class ChildDaoImpl extends AbstractDao<Integer, Child> implements ChildDa
 		criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
 		List<Child> children = (List<Child>) criteria.list();
 		return children;
+	}
+	
+	@Override
+	public List<Child> findAllChildrenByPage(int firstOnPage, int countOnPage) {
+		Criteria criteria = createEntityCriteria();
+		criteria.setFirstResult(firstOnPage);
+		criteria.setMaxResults(countOnPage);
+		criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
+		List<Child> children = (List<Child>) criteria.list();
+		
+		return children;
+	}
+	
+	@Override
+	public int getPagesCount(int firstOnPage, int countOnPage) {
+		int totalRecords=0;
+		 ScrollableResults  scrollableResults = sessionFactory.getCurrentSession().createCriteria(Child.class).scroll();
+         scrollableResults.last();
+         totalRecords=scrollableResults.getRowNumber()+1;
+         scrollableResults.close();
+		Criteria criteria = createEntityCriteria();
+		criteria.setFirstResult(firstOnPage);
+		criteria.setMaxResults(countOnPage);
+		criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
+		List<Child> children = (List<Child>) criteria.list();
+		
+		return (totalRecords%countOnPage==0)?(totalRecords/countOnPage):(totalRecords/countOnPage+1);
 	}
 
 

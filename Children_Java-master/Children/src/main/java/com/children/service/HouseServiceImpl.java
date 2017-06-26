@@ -53,4 +53,9 @@ public class HouseServiceImpl implements HouseService{
 		return houseDao.findAllHousesByCity(city);
 	}
 
+	@Override
+	public int getNumberOfChildren(int id) {
+		return houseDao.getNumberOfChildren(id);
+	}
+
 }

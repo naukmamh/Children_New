@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags/form"
+	prefix="springForm"%>
 <html class="no-js">
 
 <head>
@@ -16,10 +19,41 @@
     <link rel="stylesheet" href="<c:url value='/static/css/hover.css'/>">
 
     <link rel="stylesheet" href="<c:url value='/static/css/style.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/usertab.css'/>">
 
 </head>
 
 <body>
+<script type="text/javascript">
+window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '796463480514850',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();   
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+ <div class="usertab">
+        <div class="img-border"></div>
+        <div class="userpic"></div>
+        <center>
+        <div class="gifts-info"><div class="centered"><i class="fa fa-gift"></i><span>&nbsp;&nbsp;&nbsp;200 подарунків</span></div></div>
+            </center>
+        <ul class="btns">
+        <li><a>Кабінет</a></li>
+        <li><a>Вийти</a></li>
+        </ul>
+    </div>
     <header role="banner" id="fh5co-header">
         <div class="container">
             <nav class="navbar navbar-default">
@@ -34,6 +68,7 @@
                         <li><a href="#" data-nav-section="testimonials"><span>Як працює</span></a></li>
                         <li><a href="#" data-nav-section="press"><span>Діти</span></a></li>
                         <li><a href="#" class="login-btn hvr-reveal"><span>Увійти</span></a></li>
+                        <li><a id="user-nav"><i class="fa fa-user-circle-o"></i></a></li>
                     </ul>
                 </div>
             </nav>
@@ -98,6 +133,7 @@
         <div class="container">
             <div class="row row-bottom-padded-lg" id="about-us">
                 <div class="col-md-12 section-heading text-center">
+                
                     <h2 class="to-animate">Про нас</h2>
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2 to-animate">
@@ -274,20 +310,25 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Заявка на реєстрацію будинка</h4>
                 </div>
+                <springForm:form method="POST" modelAttribute="request"
+								action="addRequest">
                 <div class="modal-body">
-                    <input type="text" id="fname" placeholder="Ім'я" />
-                    <input type="text" id="lname" placeholder="Прізвище" />
-                    <input type="text" id="login" placeholder="Логін" />
-                    <input type="text" id="password" placeholder="Пароль" />
-                    <input type="text" id="email" placeholder="E-mail" />
-                    <input type="text" id="title" placeholder="Назва" />
-                    <textarea id="description" placeholder="Опис"></textarea>
-                    <input type="text" id="address" placeholder="Адреса" />
-                    <input type="text" id="pic" placeholder="URL фото будинку" />
+                    <springForm:input path="firstName" type="text" id="fname" placeholder="Ім'я" />
+                    <springForm:input path="lastName" type="text" id="lname" placeholder="Прізвище" />
+                    <springForm:input path="ssoId" type="text" id="login" placeholder="Логін" />
+                    <springForm:input path="password" type="password" id="password" placeholder="Пароль" />
+                    <springForm:input path="email" type="text" id="email" placeholder="E-mail" />
+                    <springForm:input path="name" type="text" id="title" placeholder="Назва" />
+                    <springForm:textarea path="description" id="description" placeholder="Опис"></springForm:textarea>
+                    <springForm:input path="city" type="text" id="address" placeholder="Місто" />
+                    <springForm:input path="street" type="text" id="address" placeholder="Вулиця" />
+                    <springForm:input path="number" type="text" id="address" placeholder="Номер" />
+                    <springForm:input path="photoUrl" type="text" id="pic" placeholder="URL фото будинку" />
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn-sub" data-dismiss="modal">Зберегти</button>
+                <input class="btn-submit" type="submit" value="Register">
                 </div>
+                </springForm:form>
             </div>
 
         </div>
@@ -308,6 +349,7 @@
     <script src="<c:url value='/static/js/jquery.waypoints.min.js'/>"></script>
     <script src="<c:url value='/static/js/owl.carousel.min.js'/>"></script>
     <script src="<c:url value='/static/js/jquery.style.switcher.js'/>"></script>
+    <script src="<c:url value='/static/js/usertab.js'/>"></script>
     <script src="<c:url value='/static/js/main.js'/>"></script>
 
 </body>

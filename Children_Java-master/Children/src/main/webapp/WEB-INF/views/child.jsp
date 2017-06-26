@@ -26,8 +26,20 @@
     <link rel="stylesheet" href="<c:url value='/static/css/style.css'/>">
     <link rel="stylesheet" href="<c:url value='/static/css/style-chp.css'/>">
     <link rel="stylesheet" href="<c:url value='/static/css/style-child.css'/>">
+    <link rel="stylesheet" href="<c:url value='/static/css/usertab.css'/>">
 </head>
 <body>
+ <div class="usertab">
+        <div class="img-border"></div>
+        <div class="userpic"></div>
+        <center>
+        <div class="gifts-info"><div class="centered"><i class="fa fa-gift"></i><span>&nbsp;&nbsp;&nbsp;200 подарунків</span></div></div>
+            </center>
+        <ul class="btns">
+        <li><a>Кабінет</a></li>
+        <li><a>Вийти</a></li>
+        </ul>
+    </div>
 	<header role="banner" id="fh5co-header">
         <div class="container">
             <nav class="navbar navbar-default">
@@ -39,6 +51,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#"><span>Головна</span></a></li>
                         <li><a href="#" class="login-btn hvr-reveal"><span>Увійти</span></a></li>
+                        <li><a id="user-nav"><i class="fa fa-user-circle-o"></i></a></li>
                     </ul>
                 </div>
             </nav>
@@ -210,10 +223,11 @@
                         <input name="name" type="text" id="title-wish" placeholder="Назва" />
                         <textarea name="description" id="desc-wish" placeholder="Опис"></textarea>
                         <select name="categoryWish">
+                        	<c:forEach items="${categories}" var="c">
 	                        <option value="" disabled selected>Оберіть категорію бажання</option>
-	                        <option value="Animal">Тваринка</option>
-	                        <option value="Food">Їжа</option>
-	                        <option value="yummy">Смаколики</option>
+	                        <option value="${c.name }">${c.name }</option>
+	                        
+	                        </c:forEach>
                     	</select>
                     	<input style="display:none" name="childId" value="${child.id}">
                         <div class="sr"><input type="checkbox" class="srochno" /><label>Терміново потрібно</label></div>
@@ -245,6 +259,7 @@
     <script src="<c:url value='/static/js/mo.min.js'/>"></script>
     <script src="<c:url value='/static/js/burst.js'/>"></script>
 	<script src="http://malsup.github.com/jquery.form.js"></script> 
+	<script src="<c:url value='/static/js/usertab.js'/>"></script>
     <script>
         $(document).ready(function() {
             $('#myCarousel').carousel({
