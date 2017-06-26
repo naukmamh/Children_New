@@ -3,6 +3,7 @@ package com.children.controller;
 import java.util.List;
 
 import javax.transaction.Transactional;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -13,12 +14,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenBasedRememberMeServices;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.children.model.House;
 import com.children.model.WishCategory;
+import com.children.model.viewmodel.ChangeUserModel;
 import com.children.service.HouseRequestService;
 import com.children.service.HouseService;
 import com.children.service.UserProfileService;
@@ -55,10 +58,25 @@ public class UserCabinetController {
 	@RequestMapping(value = { "/user" }, method = RequestMethod.GET)
 	public String getMainPage(ModelMap model) {
 		model.addAttribute("loggedinuser", getPrincipal());
+		model.addAttribute("updateUser", new ChangeUserModel());
 		
 		return "user-cabinet";
 	}
-	
+	@Transactional
+	@RequestMapping(value = { "/updateUser" }, method = RequestMethod.POST)
+	public String updUser(@Valid ChangeUserModel updateUser, BindingResult result, ModelMap model) {
+		System.out.println("Heeeeeere");
+		
+		if (result.hasErrors()) {
+			System.out.println(result.getAllErrors().toString());
+			return "redirect:/admin";
+		}
+
+		
+		
+		model.addAttribute("loggedinuser", getPrincipal());
+		return "redirect:/user";
+	}
 	private String getPrincipal() {
 		String userName = null;
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();

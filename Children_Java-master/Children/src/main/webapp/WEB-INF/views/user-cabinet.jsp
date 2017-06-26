@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -95,7 +97,7 @@ window.fbAsyncInit = function() {
                         </div>
                         <div class="col-md-6 section-heading-main text-center">
                             <div>
-                                <h2 class="single-animate animate-press-1">user</h2>
+                                <h2 class="single-animate animate-press-1">${loggedinuser }</h2>
                                 <div class="child-info">
                                     <div>220 подарунків</div>
                                 </div>
@@ -105,7 +107,7 @@ window.fbAsyncInit = function() {
                                         <a href="https://facebook.com/ondrej.p.barta" class="link facebook" target="_parent"><span class="fa fa-facebook-square"></span></a>
                                     </div>
                                 </div>
-                                <button style="margin-top: 20px" class="btn btn-primary hvr-grow to-animate" data-toggle="modal" data-target="#edit-info-house">Редагувати</button>
+                                <button style="margin-top: 20px" class="btn btn-primary hvr-grow to-animate" data-toggle="modal" data-target="#edit-user">Редагувати</button>
                             </div>
                         </div>
                     </div>
@@ -205,13 +207,23 @@ window.fbAsyncInit = function() {
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Редагувати інформацію</h4>
                 </div>
+                <form:form method="POST" modelAttribute="updateUser"
+					action="updateUser">
                 <div class="modal-body">
-                     <input type="text" id="pass" placeholder="Новий пароль" />
-                    <input type="text" id="av" placeholder="URL аватарки" />
+                <!-- <form:input path="firstName" type="text" id="fn" placeholder="Ім'я" />
+                     <form:input path="lastName" type="text" id="ln" placeholder="Прізвище" />
+                     <form:input path="email" type="text" id="email" placeholder="E-mail" />
+                     <form:input path="ssoId" type="text" id="sso" placeholder="Логін" />
+                     <form:input path="password" type="password" id="pass" placeholder="Новий пароль" />
+                    <form:input path="photoUrl" type="text" id="av" placeholder="URL аватарки" />
+                     
+                    
+                    
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn-sub" data-dismiss="modal">Зберегти</button>
+                   <input class="btn-submit" type="submit" value="Зберегти">
                 </div>
+                </form:form> -->
             </div>
         </div>
     </div>

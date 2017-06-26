@@ -64,8 +64,27 @@ public class User implements Serializable {
 	@Email
 	@Column(name = "email")
 	private String email;
+	
+	@Column(name = "photo_url")
+	private String photoUrl;
 
 	
+	public String getPhotoUrl() {
+		return photoUrl;
+	}
+
+	public void setPhotoUrl(String photoUrl) {
+		this.photoUrl = photoUrl;
+	}
+
+	public Set<Present> getPresents() {
+		return presents;
+	}
+
+	public void setPresents(Set<Present> presents) {
+		this.presents = presents;
+	}
+
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "APP_USER_USER_PROFILE", joinColumns = { @JoinColumn(name = "USER_ID") }, inverseJoinColumns = {
 			@JoinColumn(name = "USER_PROFILE_ID") })
