@@ -110,7 +110,7 @@
 
 
                 <center>
-
+				${totalPages}
                     <div>
                         <ul class="pagination to-animate">
                             <li class="previous">

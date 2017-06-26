@@ -72,6 +72,11 @@ public class ChildrenServiceImpl implements ChildrenService{
 				,LocalDate.now())
 				.getYears();
 	}
+	
+	@Override
+	public List<Child> getAllChildrenByPage(int firstOnPage, int countOnPage){
+		return childDao.findAllChildrenByPage(firstOnPage, countOnPage);
+	}
 
 	@Override
 	public List<List<Wish>> formatCarouselWishes(Set<Wish> childWishes) {
@@ -93,5 +98,10 @@ public class ChildrenServiceImpl implements ChildrenService{
 			ret.add(part);
 		}
 		return ret;
+	}
+
+	@Override
+	public int getPagesCount(int firstOnPage, int countOnPage) {
+		return childDao.getPagesCount(firstOnPage, countOnPage);
 	}
 }

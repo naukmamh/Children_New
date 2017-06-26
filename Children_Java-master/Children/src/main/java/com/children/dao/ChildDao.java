@@ -18,4 +18,8 @@ public interface ChildDao {
 	List<Child> findAllChildrenByHouse(int houseId);
 	
 	List<Child> findAllChildrenWithFilters(Map<String, String> filters);
+	
+	List<Child> findAllChildrenByPage(int firstOnPage, int countOnPage);
+	
+	int getPagesCount(int firstOnPage, int countOnPage);
 }
