@@ -133,25 +133,14 @@
                                             <h2 class="fh5co-press-title years">${h.numberOfChildren } дітей</h2>
                                             <p class="address" style="margin-top: -45px !important; font-weight: 400 !important">${h.city }, ${h.street }, ${h.number }</p>
                                             <p> ${h.description } </p>
-                                            <a href="#" class="btn btn-primary btn-sm">Видалити будинок</a>
+                                            <a href="/Children/delete/${h.id}" class="btn btn-primary btn-sm">Видалити будинок</a>
                                         </div>
 
                                     </div>
                                 </div>
                                 </c:forEach>
 
-                                <div class="col-md-6">
-                                    <div class="fh5co-press-item to-animate">
-                                        <div class="fh5co-press-img" style="background-image: url(https://www.barnardos.org.uk/how-to-adopt-a-child-in-scotland-top-banner.jpg)">
-                                        </div>
-                                        <div class="fh5co-press-text">
-                                            <h3 class="h2 fh5co-press-title">Катя <span class="fh5co-border"></span></h3>
-                                            <h2 class="fh5co-press-title years">10 років</h2>
-                                            <p>Любить малювати</p>
-                                            <a href="#" class="btn btn-primary btn-sm">Дізнатися більше</a>
-                                        </div>
-                                    </div>
-                                </div>
+                               
                             </div>
                             <center>
 

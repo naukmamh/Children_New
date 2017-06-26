@@ -72,6 +72,16 @@ public class AdminCabinetController {
 	
 		return "redirect:/admin";
 	}
+	
+	@Transactional
+	@RequestMapping(value = { "/delete/{houseId}" }, method = RequestMethod.GET)
+	public String deleteHouse(@PathVariable int houseId, ModelMap model) {
+		
+		model.addAttribute("loggedinuser", getPrincipal());
+		houseService.deleteHouse(houseId);
+	
+		return "redirect:/admin";
+	}
 
 //	@Transactional
 //	@RequestMapping(value = { "/addRequest" }, method = RequestMethod.POST)
