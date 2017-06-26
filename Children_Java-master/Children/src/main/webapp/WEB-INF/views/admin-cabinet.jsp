@@ -211,15 +211,64 @@
 										<h3 class="h2 fh5co-press-title">${c.name }<span
 												class="fh5co-border"></span>
 										</h3>
-										<a href="#" data-toggle="modal" data-target="#edit-category"
+										<a href="#" data-toggle="modal" data-target="#edit-category${c.id }"
 											class="btn btn-primary btn-sm">Редагувати</a> <a href="#"
-											data-toggle="modal" data-target="#delete-category"
+											data-toggle="modal" data-target="#delete-category${c.id }"
 											class="btn btn-primary btn-sm">Видалити</a>
 									</div>
 
 								</div>
 
 							</div>
+							
+							<div id="edit-category${c.id }" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Редагувати категорію</h4>
+				</div>
+				<form:form method="POST" modelAttribute="updateCategory"
+					action="updateCategory">
+					<div class="modal-body">
+						<form:input path="name" type="text" id="title" placeholder="Назва" />
+						<form:input path="id" type="hidden" id="title" placeholder="" value="${c.id }" />
+						<form:input path="pictureUrl" type="text" id="photo"
+							placeholder="URL фото" />
+					</div>
+					<div class="modal-footer">
+						<input class="btn-submit" type="submit" value="Додати">
+					</div>
+				</form:form>
+
+			</div>
+
+		</div>
+	</div>
+					<div id="delete-category${c.id }" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Видалити категорію</h4>
+				</div>
+				<div class="modal-body">
+					<p>Ви впевнені, що бажаєте видалити цю категорію подарунків?</p>
+				</div>
+				<div class="modal-footer">
+					<center>
+					
+						<nav class="cl-effect-5"> <a href="/Children/deleteCategory/${c.id }"
+							class="btn btn-primary yes"><span data-hover="Так">Так</span></a>
+						<a href="#" data-dismiss="modal" class="btn btn-primary no"><span
+							data-hover="Ні">Ні</span></a> </nav>
+					</center>
+				</div>
+			</div>
+
+		</div>
+	</div>
+							
 						</c:forEach>
 
 					</div>
@@ -338,25 +387,7 @@
 	</div>
 
 
-	<div id="edit-category" class="modal fade" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Редагувати категорію</h4>
-				</div>
-				<div class="modal-body">
-					<input type="text" id="title" placeholder="Назва" /> <input
-						type="text" id="photo" placeholder="URL фото" />
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn-sub" data-dismiss="modal">Зберегти</button>
-				</div>
-			</div>
-
-		</div>
-	</div>
-
+	
 	<div id="add-category" class="modal fade" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -380,29 +411,7 @@
 		</div>
 	</div>
 
-	<div id="delete-category" class="modal fade" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Видалити категорію</h4>
-				</div>
-				<div class="modal-body">
-					<p>Ви впевнені, що бажаєте видалити цю категорію подарунків?</p>
-				</div>
-				<div class="modal-footer">
-					<center>
-						<nav class="cl-effect-5"> <a href="#" data-dismiss="modal"
-							class="btn btn-primary yes"><span data-hover="Так">Так</span></a>
-						<a href="#" data-dismiss="modal" class="btn btn-primary no"><span
-							data-hover="Ні">Ні</span></a> </nav>
-					</center>
-				</div>
-			</div>
-
-		</div>
-	</div>
-
+	
 	<footer id="footer" role="contentinfo">
 	<div class="container">
 		<div class="row row-bottom-padded-sm">
