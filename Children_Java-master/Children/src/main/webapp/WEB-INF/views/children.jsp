@@ -107,30 +107,41 @@
                     </div>
                 </div>
                 </c:forEach>
-
-
-                <center>
-				${totalPages}
+            </div>
+            <center>
                     <div>
                         <ul class="pagination to-animate">
+                        <c:if test="${pageNow eq 1}">
                             <li class="previous">
-                                <a href="#fakelink" class="fui-arrow-left">Попередня</a>
+                                <a style="background:#eee" class="fui-arrow-left">Попередня</a>
                             </li>
-                            <li class="active"><a href="#fakelink">1</a></li>
-                            <li class="hvr-sink"><a href="#fakelink">2</a></li>
-                            <li class="hvr-sink"><a href="#fakelink">3</a></li>
-                            <li class="hvr-sink"><a href="#fakelink">4</a></li>
-                            <li class="hvr-sink"><a href="#fakelink">5</a></li>
-                            <li class="hvr-sink"><a href="#fakelink">6</a></li>
-                            <li class="hvr-sink"><a href="#fakelink">7</a></li>
-                            <li class="hvr-sink"><a href="#fakelink">8</a></li>
+                            </c:if>
+                        <c:if test="${pageNow ne 1}">
+                            <li class="previous">
+                                <a href="all?page=<c:out value="${pageNow-1}"/>" class="fui-arrow-left">Попередня</a>
+                            </li>
+                            </c:if>
+                            <c:forEach var="i" begin="1" end="${totalPages}">
+                             <c:if test="${i eq pageNow}">
+                               <li class="active"><a><c:out value="${i}"/></a></li>
+                            </c:if>
+                            <c:if test="${i ne pageNow}">
+                               <li class="hvr-sink"><a href="all?page=<c:out value="${i}"/>"><c:out value="${i}"/></a></li>
+                            </c:if>
+                            </c:forEach>
+                            <c:if test="${pageNow ne totalPages}">
                             <li class="next">
-                                <a href="#fakelink" class="fui-arrow-right">Наступна</a>
+                                <a href="all?page=<c:out value="${pageNow+1}"/>"class="fui-arrow-right">Наступна</a>
                             </li>
+                            </c:if>
+                            <c:if test="${pageNow eq totalPages}">
+                            <li class="next">
+                                <a style="background:#eee" class="fui-arrow-right">Наступна</a>
+                            </li>
+                            </c:if>
                         </ul>
                     </div>
                 </center>
-            </div>
         </div>
     </div>
 
