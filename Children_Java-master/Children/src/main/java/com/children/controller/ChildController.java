@@ -50,14 +50,16 @@ public class ChildController {
 	@Transactional
 	@RequestMapping(value = { "/all" }, method = RequestMethod.GET)
 	public String listChildren(ModelMap model, @RequestParam Map<String,String> filters, @RequestParam(name="page", required=false, defaultValue="1") int page) {
-	List<Child> children;
+		filters.keySet().removeAll(Collections.singleton("page"));
+		List<Child> children;
 	if(filters.size()>0){
 		filters.values().removeAll(Collections.singleton(""));
 		children = childrenService.findAllChildrenWithFilters(filters);
 	} else{
-		children = childrenService.getAllChildrenByPage(page,10);
+		children = childrenService.getAllChildrenByPage(page,2);
 	}
-	model.addAttribute("totalPages", childrenService.getPagesCount(page,5));
+	model.addAttribute("totalPages", childrenService.getPagesCount(page,2));
+	model.addAttribute("pageNow",page);
 		model.addAttribute("children", children);
 		model.addAttribute("loggedinuser", getPrincipal());
 		

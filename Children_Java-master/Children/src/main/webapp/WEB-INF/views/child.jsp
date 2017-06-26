@@ -22,6 +22,7 @@
     <link href="<c:url value='/static/css/imagehover.css'/>" rel="stylesheet" media="all">
     <link rel="stylesheet" type="text/css" href="<c:url value='/static/css/icons.css'/>" />
     <link href="http://www.cssscript.com/wp-includes/css/sticky.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="<c:url value='/static/dist/switchery.css'/>"/>
 
     <link rel="stylesheet" href="<c:url value='/static/css/style.css'/>">
     <link rel="stylesheet" href="<c:url value='/static/css/style-chp.css'/>">
@@ -258,6 +259,7 @@
     <script src="<c:url value='/static/js/jquery.style.switcher.js'/>"></script>
     <script src="<c:url value='/static/js/mo.min.js'/>"></script>
     <script src="<c:url value='/static/js/burst.js'/>"></script>
+    <script src="<c:url value='/static/dist/switchery.js'/>"></script>
 	<script src="http://malsup.github.com/jquery.form.js"></script> 
 	<script src="<c:url value='/static/js/usertab.js'/>"></script>
     <script>
