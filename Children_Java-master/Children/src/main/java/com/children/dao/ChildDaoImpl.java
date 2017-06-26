@@ -34,10 +34,12 @@ public class ChildDaoImpl extends AbstractDao<Integer, Child> implements ChildDa
 		crit.add(Restrictions.eq("id", id));
 		Child child = (Child) crit.uniqueResult();
 		delete(child);
-
 	}
 
-
+	@Override
+	public void update(Child c){
+		sessionFactory.getCurrentSession().update(c);
+	}
 
 	@Override
 	public Child findById(Integer id) {

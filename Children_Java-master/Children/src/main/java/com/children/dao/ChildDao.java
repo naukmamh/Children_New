@@ -10,6 +10,8 @@ public interface ChildDao {
 	Child findById(Integer integer);
 	
 	void save(Child child);
+
+	void update(Child child);
 	
 	void deleteById(int id);
 	

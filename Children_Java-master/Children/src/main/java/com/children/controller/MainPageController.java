@@ -1,9 +1,5 @@
 package com.children.controller;
 
-import java.util.HashSet;
-import java.util.Locale;
-import java.util.Set;
-
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -17,14 +13,10 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.children.model.HouseRequest;
-import com.children.model.User;
-import com.children.model.UserProfile;
 import com.children.service.HouseRequestService;
 import com.children.service.UserProfileService;
 import com.children.service.UserService;
