@@ -15,6 +15,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import java.lang.System;
 
 @Configuration
 @EnableTransactionManagement
@@ -40,6 +41,7 @@ public class HibernateConfiguration {
         dataSource.setDriverClassName(environment.getRequiredProperty("jdbc.driverClassName"));
         dataSource.setUrl(environment.getRequiredProperty("jdbc.url"));
         dataSource.setUsername(environment.getRequiredProperty("jdbc.username"));
+	System.out.println(environment.getRequiredProperty("jdbc.username") + " " + environment.getRequiredProperty("jdbc.password"));
         dataSource.setPassword(environment.getRequiredProperty("jdbc.password"));
         return dataSource;
     }
