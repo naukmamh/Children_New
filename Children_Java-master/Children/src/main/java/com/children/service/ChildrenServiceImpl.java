@@ -37,11 +37,9 @@ public class ChildrenServiceImpl implements ChildrenService{
 			c.setDescription(child.getDescription());
 			c.setFirstName(child.getFirstName());
 			c.setLastName(child.getLastName());
-			c.setBirthDate(child.getBirthDate());
-			
-			
+			c.setBirthDate(child.getBirthDate());			
 		}
-		
+		childDao.update(c);
 	}
 
 	@Override

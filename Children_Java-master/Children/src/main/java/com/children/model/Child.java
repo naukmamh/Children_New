@@ -1,7 +1,7 @@
 package com.children.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -44,7 +44,6 @@ public class Child implements Serializable {
 
 	@NotNull
 	@Past
-	@NotEmpty
 	@Column
 	private Date  birthDate;
 	
@@ -52,6 +51,9 @@ public class Child implements Serializable {
 	@NotEmpty
 	@Column
 	private String sex;
+	
+	@Column
+	private String photo;
 	
 	@NotEmpty
 	@Column
@@ -61,7 +63,7 @@ public class Child implements Serializable {
 	@JoinColumn(name = "house_id")
 	private House house;
 	
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "child", cascade = CascadeType.REMOVE)
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "child", cascade = CascadeType.REMOVE)
 	private Set<Wish> wishes; 
 	
 	public int getId() {
@@ -126,6 +128,14 @@ public class Child implements Serializable {
 
 	public void setWishes(Set<Wish> wishes) {
 		this.wishes = wishes;
+	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
 	
 }

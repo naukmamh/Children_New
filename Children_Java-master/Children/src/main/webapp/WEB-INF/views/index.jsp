@@ -67,7 +67,7 @@ window.fbAsyncInit = function() {
                         <li><a href="#" data-nav-section="about"><span>Про нас</span></a></li>
                         <li><a href="#" data-nav-section="testimonials"><span>Як працює</span></a></li>
                         <li><a href="#" data-nav-section="press"><span>Діти</span></a></li>
-                        <li><a href="#" class="login-btn hvr-reveal"><span>Увійти</span></a></li>
+                        <li><a href="login" class="login-btn hvr-reveal"><span>Увійти</span></a></li>
                         <li><a id="user-nav"><i class="fa fa-user-circle-o"></i></a></li>
                     </ul>
                 </div>
@@ -85,7 +85,7 @@ window.fbAsyncInit = function() {
                                 <div class="fh5co-owl-text">
                                     <h1 class="fh5co-lead to-animate">Разом ми можемо допомогти!</h1>
                                     <h2 class="fh5co-sub-lead to-animate">Не будь байдужим<br> Поділися частинкою радості з тими, хто її потребує</h2>
-                                    <p class="to-animate-2"><a href="#" class="btn btn-primary btn-lg">Подарувати мрію</a></p>
+                                    <p class="to-animate-2"><a href="all" class="btn btn-primary btn-lg">Подарувати мрію</a></p>
                                 </div>
                             </div>
                         </div>
@@ -116,7 +116,7 @@ window.fbAsyncInit = function() {
                             <div class="fh5co-owl-text-wrap">
                                 <div class="fh5co-owl-text">
                                     <h1 class="fh5co-lead to-animate">Зацікавився?</h1>
-                                    <p class="to-animate-2"><a href="#" class="btn btn-primary btn-lg">Приєднуйся!</a></p>
+                                    <p class="to-animate-2"><a href="registration" class="btn btn-primary btn-lg">Приєднуйся!</a></p>
                                 </div>
                             </div>
                         </div>
@@ -147,7 +147,7 @@ window.fbAsyncInit = function() {
                 <div class="col-md-4 to-animate">
                     <h2>Зачем мы это сделали</h2>
                     <p>типа много текста, зачем мы это делали</p>
-                    <p><a href="#" class="btn btn-primary">Наша команда</a></p>
+                    <p><a href="https://github.com/natalya118/Children_New" class="btn btn-primary">Наша команда</a></p>
                 </div>
             </div>
             <div class="row" id="team">
@@ -257,7 +257,7 @@ window.fbAsyncInit = function() {
                             <h3 class="h2 fh5co-press-title">Вася <span class="fh5co-border"></span></h3>
                             <h2 class="fh5co-press-title years">12 років</h2>
                             <p>Мріє про родину</p>
-                            <p><a href="#" class="btn btn-primary btn-sm">Дізнатися більше</a></p>
+                            <p><a href="all" class="btn btn-primary btn-sm">Дізнатися більше</a></p>
                         </div>
                     </div>
                 </div>
@@ -276,7 +276,7 @@ window.fbAsyncInit = function() {
                     </div>
                 </div>
 				<center>
-                    <button class="btn btn-primary allchildren">Усі діти</button>
+                    <a href="all" class="btn btn-primary allchildren">Усі діти</button>
                 </center>
 
             </div>
@@ -343,15 +343,30 @@ window.fbAsyncInit = function() {
         </div>
     </footer>
 
+    <c:if test="${not empty message}">
+    <div class="modal fade" id="Request_Status" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">REQUEST PROCESSING</h4>
+                </div>
+                <div class="modal-body">
+                	 ${message}
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </c:if>
     <script src="<c:url value='/static/js/jquery.min.js'/>"></script>
+    <script src="<c:url value='/static/js/main.js'/>"></script>
     <script src="<c:url value='/static/js/jquery.easing.1.3.js'/>"></script>
     <script src="<c:url value='/static/js/bootstrap.min.js'/>"></script>
     <script src="<c:url value='/static/js/jquery.waypoints.min.js'/>"></script>
     <script src="<c:url value='/static/js/owl.carousel.min.js'/>"></script>
     <script src="<c:url value='/static/js/jquery.style.switcher.js'/>"></script>
     <script src="<c:url value='/static/js/usertab.js'/>"></script>
-    <script src="<c:url value='/static/js/main.js'/>"></script>
-
 </body>
 
 </html>
