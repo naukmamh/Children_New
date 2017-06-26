@@ -79,8 +79,8 @@ window.fbAsyncInit = function() {
             <nav>
                 <ul>
                     <li></li>
-                    <li><a href="#section-linemove-1" class="icon fa fa-user"><span>Акаунт</span></a></li>
-                    <li><a href="#section-linemove-2" class="icon fa fa-gift"><span>Мої подарунки</span></a></li>
+                    <li><a href="#section-linemove-2" class="icon fa fa-user"><span>Акаунт</span></a></li>
+                    <li><a href="#section-linemove-3" class="icon fa fa-gift"><span>Мої подарунки</span></a></li>
                     <li></li>
                 </ul>
             </nav>
@@ -170,6 +170,7 @@ window.fbAsyncInit = function() {
                         </div>
                     </div>
                 </section>
+                <section id="section-linemove-4"></section>
             </div>
         </div>
     </section>
