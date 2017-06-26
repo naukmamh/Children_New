@@ -24,6 +24,7 @@ import com.children.service.ChildrenService;
 import com.children.service.HouseService;
 import com.children.service.UserProfileService;
 import com.children.service.UserService;
+import com.children.service.WishCategoryService;
 
 @Controller
 @SessionAttributes("roles")
@@ -39,6 +40,9 @@ public class ChildController {
 	
 	@Autowired
 	ChildrenService childrenService;
+	
+	@Autowired
+	WishCategoryService wishCategoryService;
 	
 	@Autowired
 	HouseService houseService;
@@ -78,6 +82,7 @@ public String oneChildren(ModelMap model, @RequestParam("id") int id) {
 	model.addAttribute("child", child);
 	model.addAttribute("age", childrenService.getAge(child));
 	model.addAttribute("wishes",childrenService.formatCarouselWishes(child.getWishes()));
+	model.addAttribute("categories", wishCategoryService.findAllWishCategories());
 	model.addAttribute("loggedinuser", getPrincipal());
 	return "child";
 }
