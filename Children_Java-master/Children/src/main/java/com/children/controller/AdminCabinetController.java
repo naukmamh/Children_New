@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.children.model.CatView;
 import com.children.model.House;
 import com.children.model.HouseRequest;
 import com.children.model.User;
@@ -68,6 +69,7 @@ public class AdminCabinetController {
 		model.addAttribute("requests", houseRequestService.findAllHouseRequests());
 		model.addAttribute("categories", wishCategoryService.findAllWishCategories());
 		model.addAttribute("category", new WishCategory());
+		model.addAttribute("updateCategory", new WishCategory());
 		List<House> houses = houseService.findAllHouses();
 		for(House h: houses){
 			h.setNumberOfChildren(houseService.getNumberOfChildren(h.getId()));
@@ -98,7 +100,7 @@ public class AdminCabinetController {
 	
 	@Transactional
 	@RequestMapping(value = { "/newcategory" }, method = RequestMethod.POST)
-	public String saveUser(@Valid WishCategory category, BindingResult result, ModelMap model) {
+	public String newCat(@Valid WishCategory category, BindingResult result, ModelMap model) {
 		
 		if (result.hasErrors()) {
 			System.out.println(result.getAllErrors().toString());
@@ -113,7 +115,33 @@ public class AdminCabinetController {
 		// return "success";
 		return "redirect:/admin";
 	}
+	
+	@Transactional
+	@RequestMapping(value = { "/updateCategory" }, method = RequestMethod.POST)
+	public String updCat(@Valid WishCategory updateCategory, BindingResult result, ModelMap model) {
+		
+		if (result.hasErrors()) {
+			System.out.println(result.getAllErrors().toString());
+			return "redirect:/admin";
+		}
 
+		wishCategoryService.updateWishCategory(updateCategory);
+		
+		model.addAttribute("loggedinuser", getPrincipal());
+		return "redirect:/admin";
+	}
+
+	
+	@Transactional
+	@RequestMapping(value = { "/deleteCategory/{categoryId}" }, method = RequestMethod.GET)
+	public String deleteCategory(@PathVariable int categoryId, ModelMap model) {
+		System.out.println("deleteeee");
+		model.addAttribute("loggedinuser", getPrincipal());
+		wishCategoryService.deleteWishCategory(categoryId);
+	
+		return "redirect:/admin";
+	}
+	
 //	@Transactional
 //	@RequestMapping(value = { "/addRequest" }, method = RequestMethod.POST)
 //	public String saveUser(@Valid HouseRequest request, BindingResult result, ModelMap model) {

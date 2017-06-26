@@ -63,7 +63,8 @@ public class ChildDaoImpl extends AbstractDao<Integer, Child> implements ChildDa
 	@Override
 	public List<Child> findAllChildrenByPage(int firstOnPage, int countOnPage) {
 		Criteria criteria = createEntityCriteria();
-		criteria.setFirstResult(firstOnPage);
+		firstOnPage--;
+		criteria.setFirstResult(firstOnPage*countOnPage);
 		criteria.setMaxResults(countOnPage);
 		criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
 		List<Child> children = (List<Child>) criteria.list();

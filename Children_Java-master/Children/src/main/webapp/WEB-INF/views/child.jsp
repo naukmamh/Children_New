@@ -22,7 +22,12 @@
     <link href="<c:url value='/static/css/imagehover.css'/>" rel="stylesheet" media="all">
     <link rel="stylesheet" type="text/css" href="<c:url value='/static/css/icons.css'/>" />
     <link href="http://www.cssscript.com/wp-includes/css/sticky.css" rel="stylesheet" type="text/css">
+<<<<<<< HEAD
+    <link rel="stylesheet" href="<c:url value='/static/dist/switchery.css'/>"/>
+
+=======
 	<link rel="stylesheet" href="<c:url value='/static/dist/switchery.css'/>"/>
+>>>>>>> refs/remotes/origin/Oleksii
     <link rel="stylesheet" href="<c:url value='/static/css/style.css'/>">
     <link rel="stylesheet" href="<c:url value='/static/css/style-chp.css'/>">
     <link rel="stylesheet" href="<c:url value='/static/css/style-child.css'/>">
