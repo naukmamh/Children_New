@@ -75,9 +75,10 @@ public class ChildDaoImpl extends AbstractDao<Integer, Child> implements ChildDa
 	@Override
 	public int getPagesCount(int firstOnPage, int countOnPage) {
 		int totalRecords=0;
-		 ScrollableResults  scrollableResults = sessionFactory.getCurrentSession().createCriteria(Child.class).scroll();
+		 ScrollableResults  scrollableResults = sessionFactory.getCurrentSession().createCriteria(Child.class).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).scroll();
          scrollableResults.last();
          totalRecords=scrollableResults.getRowNumber()+1;
+         System.out.println("total records= " + totalRecords);
          scrollableResults.close();
 		Criteria criteria = createEntityCriteria();
 		criteria.setFirstResult(firstOnPage);

@@ -65,6 +65,7 @@ public class ChildController {
 		children = childrenService.getAllChildrenByPage(page,2);
 	}
 	model.addAttribute("totalPages", childrenService.getPagesCount(page,2));
+	System.out.println("total children pages= " + childrenService.getPagesCount(page,2));
 	model.addAttribute("pageNow",page);
 		model.addAttribute("children", children);
 		model.addAttribute("loggedinuser", getPrincipal());
