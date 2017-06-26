@@ -282,6 +282,7 @@
             $('#add-wish-form').ajaxForm(function() {
                 alert("Thank you for your comment!");
             });
+            $($(".item")[0]).addClass('active');
         });
     </script>
 	
