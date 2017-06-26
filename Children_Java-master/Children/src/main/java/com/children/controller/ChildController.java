@@ -1,11 +1,15 @@
 package com.children.controller;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.transaction.Transactional;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -13,6 +17,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,6 +25,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.children.model.Child;
 import com.children.model.House;
+import com.children.model.Wish;
 import com.children.service.ChildrenService;
 import com.children.service.HouseService;
 import com.children.service.UserProfileService;
@@ -85,6 +91,19 @@ public String oneChildren(ModelMap model, @RequestParam("id") int id) {
 	return "child";
 }
 
+@Transactional
+@RequestMapping(value = { "/child_edit" }, method = RequestMethod.GET)
+public String editChild(ModelMap model, @Valid Child child, BindingResult br) {
+	if(br.hasErrors()){
+		System.out.println(br.getAllErrors().get(0));
+		model.addAttribute("status","error");
+		return "redirect:/all";
+	}
+	
+	System.out.println("child "+child.getId());
+	childrenService.updateChild(child);
+	return "redirect:/all";
+}
 
 	private String getPrincipal() {
 		String userName = null;

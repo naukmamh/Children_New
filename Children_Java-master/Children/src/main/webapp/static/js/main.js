@@ -1,5 +1,3 @@
-;(function () {
-	
 	'use strict';
 
 	var owlCrouselFeatureSlide = function() {
@@ -313,8 +311,11 @@
 		teamWayPoint();
 		testimonialsWayPoint();
 		pressWayPoint();
-
+		if($("#Request_Status")!=null){
+			console.log($("#Request_Status"));
+			$("#Request_Status").modal('show');
+		/*setTimeout(function(){
+		    $("#Request_Status").modal('hide');
+		}, 3000);*/
+		}
 	});
-
-
-}());

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Ім'я</title>
+<title>${child.firstName} ${child.lastName}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Yanone+Kaffeesatz" rel="stylesheet" type='text/css'>
@@ -196,15 +196,20 @@
                     <h4 class="modal-title">Редагувати інформацію про дитину</h4>
                 </div>
                 <div class="modal-body">
-                    <input type="text" id="firstname" placeholder="Ім'я" />
-                    <input type="text" id="lastname" placeholder="Прізвище" />
-                    <textarea id="description" placeholder="Опис"></textarea>
-                    <input type="text" id="photo" placeholder="URL фото" />
+                <form action="/Children/child_edit" method="GET">
+                <input style="visibility:hidden" name="id" value="${child.id}"/>
+                    <input type="text" id="firstname" placeholder="Ім'я" name="firstName"/>
+                    <input type="text" id="lastname" placeholder="Прізвище" name="lastName" />
+                    <textarea id="description" placeholder="Опис" name="description"></textarea>
+                    <input type="text" id="photo" placeholder="URL фото" name="photo"/>
                     <label>Дата народження</label>
-                    <input type="date" id="birth" />
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn-sub" data-dismiss="modal">Зберегти</button>
+                    <input type="date" id="birth" name="birthDate" />
+                    <select name="sex">
+                    	<option value="2">Хлопчик</option>
+						<option value="3">Дівчинка</option>
+                    </select>
+                    <input type="submit" class="btn-sub" value="Зберегти"/>
+                </form>
                 </div>
             </div>
 
@@ -239,7 +244,6 @@
 
         </div>
     </div>
-
     <footer id="footer" role="contentinfo">
         <div class="container">
             <div class="row row-bottom-padded-sm">

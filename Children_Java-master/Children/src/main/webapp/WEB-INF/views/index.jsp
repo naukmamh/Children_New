@@ -276,7 +276,7 @@ window.fbAsyncInit = function() {
                     </div>
                 </div>
 				<center>
-                    <button class="btn btn-primary allchildren">Усі діти</button>
+                    <a href="all" class="btn btn-primary allchildren">Усі діти</button>
                 </center>
 
             </div>
@@ -343,15 +343,30 @@ window.fbAsyncInit = function() {
         </div>
     </footer>
 
+    <c:if test="${not empty message}">
+    <div class="modal fade" id="Request_Status" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">REQUEST PROCESSING</h4>
+                </div>
+                <div class="modal-body">
+                	 ${message}
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </c:if>
     <script src="<c:url value='/static/js/jquery.min.js'/>"></script>
+    <script src="<c:url value='/static/js/main.js'/>"></script>
     <script src="<c:url value='/static/js/jquery.easing.1.3.js'/>"></script>
     <script src="<c:url value='/static/js/bootstrap.min.js'/>"></script>
     <script src="<c:url value='/static/js/jquery.waypoints.min.js'/>"></script>
     <script src="<c:url value='/static/js/owl.carousel.min.js'/>"></script>
     <script src="<c:url value='/static/js/jquery.style.switcher.js'/>"></script>
     <script src="<c:url value='/static/js/usertab.js'/>"></script>
-    <script src="<c:url value='/static/js/main.js'/>"></script>
-
 </body>
 
 </html>
